@@ -38,14 +38,10 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.quiz:
                     replaceFragment(new QuizFragment());
                     break;
-                case R.id.calculator:
-                    replaceFragment(new CalculatorFragment());
-                    break;
-                case R.id.utility:
-                    replaceFragment(new UtilityFragment());
+                case R.id.about:
+                    replaceFragment(new AboutFragment());
                     break;
             }
-
             return true;
         });
     }

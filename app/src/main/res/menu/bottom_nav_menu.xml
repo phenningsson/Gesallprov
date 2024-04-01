@@ -14,14 +14,9 @@
         android:id="@+id/quiz"
         />
 
-    <item android:title="@string/calculator"
-        android:icon="@drawable/baseline_calculate_48"
-        android:id="@+id/calculator"
-        />
-
-    <item android:title="@string/utility"
-        android:icon="@drawable/baseline_build_48"
-        android:id="@+id/utility"
+    <item android:title="@string/about"
+        android:icon="@drawable/baseline_info_48"
+        android:id="@+id/about"
         />
 
 </menu>

@@ -3,6 +3,8 @@ package com.example.gesallprov;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,11 +12,12 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class HomeFragment extends Fragment {
 
     // appens logga, används både som knapp och logga. knapp för att roteras vid ett knapptryck
-    private ImageButton logo;
+    private TextView findWorkform;
     // deklarerar view
     private View view;
 
@@ -25,25 +28,27 @@ public class HomeFragment extends Fragment {
         // initialiserar view och inflate layouten för det här fragmentet
         view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        // initialiserar ImageButton som har appens logga som bild, hittar i layouten
-        logo = view.findViewById(R.id.logo);
+        // initialiserar welcome text, hittar i layouten
+        findWorkform = view.findViewById(R.id.tvWelcomeHeader);
 
         // sätter en knapp-lyssnare på knappen, roterar vid knapptryck
-        logo.setOnClickListener(new View.OnClickListener() {
+        findWorkform.setOnClickListener(new View.OnClickListener() {
+           // nedanstående kod funkar med att gå till quiz sidan men ikonen visar fortfarande
+            // att man är på "Home" även fast man ör på Quiz...
             @Override
             public void onClick(View v) {
-                // laddar animationen från en resursfil från mappen anim
-                Animation rotate = AnimationUtils.loadAnimation(getActivity(), R.anim.rotate);
-
-                // sätter animationen på imageknappen
-                logo.setAnimation(rotate);
-
-                // starta animationen på imageknappen
-                logo.startAnimation(rotate);
+                replaceFragment(new QuizFragment());
             }
         });
-
         // returnerar view
         return view;
     }
+
+    private void replaceFragment(Fragment fragment) {
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.frameLayout, fragment);
+        fragmentTransaction.commit();
+
+    }
+
 }
