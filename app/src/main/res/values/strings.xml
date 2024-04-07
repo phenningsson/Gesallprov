@@ -30,6 +30,18 @@
     <string name="homepageLogo">Homepage Logo</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="workform">Workform</string>
+    <string name="living_labs">Living Labs</string>
+    <string name="wordcaf">Wordcafé</string>
+    <string name="burgerjury">Burgerjury</string>
+    <string name="enqu_teren">Enquêteren</string>
+    <string name="klankbord_groep">Klankbord Groep</string>
+    <string name="inspraak_bijeenkomst">Inspraak Bijeenkomst</string>
+    <string name="straat_interviews">Straat Interviews</string>
+    <string name="interactieve_internet_omgeving">Interactieve Internet Omgeving</string>
+    <string name="interactieve_scenariobouw">Interactieve\nScenariobouw</string>
+    <string name="keukentafel_gesprekken">Keukentafel Gesprekken</string>
+    <string name="photovoice">Photovoice</string>
 
 
 </resources>

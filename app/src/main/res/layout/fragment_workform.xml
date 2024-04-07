@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".WorkformFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/imagesContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Living Labs -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/living_labs_constraint"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:background="@drawable/livinglabs_rounded_square"
+                android:layout_marginBottom="32dp">
+
+                <TextView
+                    android:id="@+id/livinglabs_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/philosopher_bold"
+                    android:text="@string/living_labs"
+                    android:textColor="@color/black"
+                    android:textSize="32dp"
+                    app:layout_constraintEnd_toStartOf="@+id/livinglabs_imageview"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/livinglabs_imageview"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/living_labs_image"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!-- Wordcafé -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/second_living_labs_constraint"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:background="@drawable/wordcafe_rounded_square"
+                android:layout_marginBottom="32dp" >
+
+                <TextView
+                    android:id="@+id/secondTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/wordcaf"
+                    android:fontFamily="@font/philosopher_bold"
+                    android:textColor="@color/black"
+                    android:textSize="32dp"
+                    app:layout_constraintEnd_toStartOf="@+id/wordcaf_image"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/wordcaf_image"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/wordcaf_image"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+            <!-- Enquêteren -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/enqueteren_constraint"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:background="@drawable/enqueteren_rounded_square"
+                android:layout_marginBottom="32dp" >
+
+                <TextView
+                    android:id="@+id/enqueteren_textview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/enqu_teren"
+                    android:fontFamily="@font/philosopher_bold"
+                    android:textColor="@color/black"
+                    android:textSize="32dp"
+                    app:layout_constraintEnd_toStartOf="@+id/enqueteren_image"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/enqueteren_image"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/enqueteren_image"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <!-- Burgerjury -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/burgerjury_constraint"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:background="@drawable/burgerjury_rounded_square"
+                android:layout_marginBottom="32dp" >
+
+                <TextView
+                    android:id="@+id/burgerjury_textview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/burgerjury"
+                    android:fontFamily="@font/philosopher_bold"
+                    android:textColor="@color/black"
+                    android:textSize="32dp"
+                    app:layout_constraintEnd_toStartOf="@+id/burgerjury_image"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/burgerjury_image"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/burgerjury_image"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Klankbord Groep -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/klankbord_constraint"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:background="@drawable/klankbord_rounded_square"
+                android:layout_marginBottom="32dp" >
+
+                <TextView
+                    android:id="@+id/klankbord_textview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/klankbord_groep"
+                    android:fontFamily="@font/philosopher_bold"
+                    android:textColor="@color/black"
+                    android:textSize="32dp"
+                    app:layout_constraintEnd_toStartOf="@+id/klankbord_image"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/klankbord_image"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/klankbord_image"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Inspraak Bijeenkomst -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/inspraak_constraint"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:background="@drawable/inspraak_rounded_square"
+                android:layout_marginBottom="32dp" >
+
+                <TextView
+                    android:id="@+id/inspraak_textview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/inspraak_bijeenkomst"
+                    android:fontFamily="@font/philosopher_bold"
+                    android:textColor="@color/black"
+                    android:textSize="32dp"
+                    app:layout_constraintEnd_toStartOf="@+id/inspraak_image"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/inspraak_image"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/inspraak_image"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!-- Straat Interviews -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/straat_constraint"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:background="@drawable/straat_rounded_square"
+                android:layout_marginBottom="32dp" >
+
+                <TextView
+                    android:id="@+id/straat_textview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/straat_interviews"
+                    android:fontFamily="@font/philosopher_bold"
+                    android:textColor="@color/black"
+                    android:textSize="32dp"
+                    app:layout_constraintEnd_toStartOf="@+id/straat_image"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/straat_image"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/straat_image"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!-- Swipocratie -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/swipocratie_constraint"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:background="@drawable/swipocratie_rounded_square"
+                android:layout_marginBottom="32dp" >
+
+                <TextView
+                    android:id="@+id/swipocratie_textview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="Swipocratie"
+                    android:fontFamily="@font/philosopher_bold"
+                    android:textColor="@color/black"
+                    android:textSize="32dp"
+                    app:layout_constraintEnd_toStartOf="@+id/swipocratie_image"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/swipocratie_image"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/swipocratie_image"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!-- Interactieve Internet Omgeving -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/interactieve_constraint"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:background="@drawable/interactieve_rounded_square"
+                android:layout_marginBottom="32dp" >
+
+                <TextView
+                    android:id="@+id/interactieve_textview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/interactieve_internet_omgeving"
+                    android:fontFamily="@font/philosopher_bold"
+                    android:textColor="@color/black"
+                    android:textSize="32dp"
+                    app:layout_constraintEnd_toStartOf="@+id/interactieve_image"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/interactieve_image"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/interactieve_image"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <!-- Interactieve Scenariobouw-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/scenariobouw_constraint"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:background="@drawable/scenariobouw_rounded_square"
+                android:layout_marginBottom="32dp" >
+
+                <TextView
+                    android:id="@+id/scenariobouw_textview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/interactieve_scenariobouw"
+                    android:fontFamily="@font/philosopher_bold"
+                    android:textColor="@color/black"
+                    android:textSize="32dp"
+                    app:layout_constraintEnd_toStartOf="@+id/scenariobouw_image"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/scenariobouw_image"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/scenariobouw_image"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!-- Keukentafel Gesprekken-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/keukentafel_constraint"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:background="@drawable/keukentafel_rounded_square"
+                android:layout_marginBottom="32dp" >
+
+                <TextView
+                    android:id="@+id/keukentafel_textview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/keukentafel_gesprekken"
+                    android:fontFamily="@font/philosopher_bold"
+                    android:textColor="@color/black"
+                    android:textSize="32dp"
+                    app:layout_constraintEnd_toStartOf="@+id/keukentafel_image"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/keukentafel_image"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/keukentafel_image"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Photovoice-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/photovoice_constraint"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:background="@drawable/photovoice_rounded_square"
+                android:layout_marginBottom="32dp" >
+
+                <TextView
+                    android:id="@+id/photovoice_textview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/photovoice"
+                    android:fontFamily="@font/philosopher_bold"
+                    android:textColor="@color/black"
+                    android:textSize="32dp"
+                    app:layout_constraintEnd_toStartOf="@+id/photovoice_image"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/photovoice_image"
+                    android:layout_width="130dp"
+                    android:layout_height="130dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/photovoice_image"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

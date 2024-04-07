@@ -35,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.home:
                     replaceFragment(new HomeFragment());
                     break;
+                case R.id.workform:
+                    replaceFragment(new WorkformFragment());
+                    break;
                 case R.id.quiz:
                     replaceFragment(new QuizFragment());
                     break;

@@ -9,6 +9,11 @@
         android:id="@+id/home"
         />
 
+    <item android:title="@string/workform"
+        android:icon="@drawable/baseline_search_48"
+        android:id="@+id/workform"
+        />
+
     <item android:title="@string/quiz"
         android:icon="@drawable/baseline_quiz_48"
         android:id="@+id/quiz"
