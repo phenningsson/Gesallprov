@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         // i resurmappen "menu"
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
 
-            // Bbt ut fragmentet beroende på vilken knapp som klickats på i navigeringsfältet
+            // Byt ut fragmentet beroende på vilken knapp som klickats på i navigeringsfältet
             switch (item.getItemId()){
 
                 case R.id.home:
@@ -56,5 +56,4 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.frameLayout, fragment);
         fragmentTransaction.commit();
     }
-
 }

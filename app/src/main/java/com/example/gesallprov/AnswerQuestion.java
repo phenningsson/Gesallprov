@@ -1,59 +1,64 @@
 package com.example.gesallprov;
 
-// hjälpklass till QuizFragment-klassen. Här skapas quizzens frågor, svarsalternativ och rätt svar
-//hämtas genom att AnswerQuestion anropas i QuizFragment-klassen
-
 public class AnswerQuestion {
 
-    // frågorna som ställs, skapas här
     public static String[] question = {
-            //första frågan
-            "In a website browser address bar, what does “www” stand for?",
-            // andra frågan
-            "What is the capital of Liechtenstein?",
-            // tredje frågan, osv
-            "In what year was Lord of the Rings published?",
-            "Which country consumes the most chocolate per capita?",
-            "What is the largest country in the world?",
-            "What is the most populous country in the world?",
-            "What is the most populous city in the world?",
-            "Which blood type is a universal donor?",
-            "How many pounds are in a ton?",
-            "What percentage of the Earth’s wildlife is found in the ocean?"
+            "Wat is het belangrijkste doel van de participatiewerkvorm die je wil inzetten?",
+            "Voor welke doelgroep wil je participatie inzetten?",
+            "Is de focus van de participatie vooral gericht op het individu of de groep?",
+            "Hoe zou je jouw ervaring met het organiseren van participatieprocessen omschrijven?",
+            "Hoeveel tijd heb je beschikbaar voor de organisatie van de participatiewerkvorm?",
+            "Welke mate van invloed wil je dat de deelnemers hebben in het participatieproces?",
+            "Welke mate van diepgang wil je bereiken gedurende het participatieproces?",
+            "In welke fase van het onderzoek of project wil je participatie toepassen?",
+            "Zal er tijdens het participatieproces vertrouwelijke informatie worden gedeeld of opgehaald?",
+            "Is het belangrijk dat de deelnemers anoniem kunnen blijven?",
+            "Wat is de gewenste groepsgrootte?",
+            "Is het belangrijk dat de participatiewerkvorm laagdrempelig is voor de deelnemers?",
+            "Wat is de gewenste tijdsduur van de participatiewerkvorm?",
+            "Is het belangrijk dat de deelnemers tijdens de participatie nieuwe dingen kunnen leren of ondervinden?",
+            "Is het belangrijk dat de participatiewerkvorm gericht is op het stimuleren van innovatie en vernieuwing?",
+            "Wil je de participatiewerkvorm formeel of informeel vormgeven?",
+            "Wil je de input van de deelnemers tijdens de participatiewerkvorm open of doelgericht laten verlopen?"
     };
 
-    //svarsalternativen till frågorna, skapas här
     public static String[][] choices = {
-            // svarsalternativen till första frågan
-            {"We Were Web", "World Wide We", "World Wide Web", "Web World Wide"},
-            // svarsalternativen till andra frågan
-            {"Vaduz", "Freiburg", "Ulm", "Koblenz"},
-            // svarsalternativen till tredje frågan, osv
-            {"1964", "1954", "1946", "1945"},
-            {"Sweden", "Switzerland", "Austria", "Belgium"},
-            {"USA", "China", "Russia", "Canada"},
-            {"China", "India", "Russia", "USA"},
-            {"Chongqing", "Delhi", "Tokyo", "Shanghai"},
-            {"O-Negative", "A-Negative", "B-Positive", "AB-Negative"},
-            {"1000", "2000", "1500", "2500"},
-            {"52", "94", "72", "33"}
+            {"Informeren", "Instrueren", "Adviseren", "Overtuigen", "Activeren", "Emotioneren", "Inspireren"},
+            {"Burgers", "Studenten", "Professionals", "Kinderen", "Jongeren", "30+", "65+"},
+            {"Belangrijk", "Onbelangrijk"},
+            {"Weinig", "Neutraal", "Veel"},
+            {"Er is veel tijd beschikbaar", "Er is minder tijd beschikbaar"},
+            {"Informeren", "Inspreken", "Consulteren", "Coproduceren / samenwerken", "Delegeren", "Zelfbestuur"},
+            {"Veel diepgang", "Neutraal", "Weinig diepgang", "Geen diepgang"},
+            {"Voorbereidende fase", "Analyserende fase", "Uitvoerende fase", "Monitorende fase"},
+            {"Ja, er zal vertrouwelijke informatie worden gedeeld/opgehaald", "Nee, alleen openbare informatie zal worden gebruikt"},
+            {"Ja, anonimiteit van de deelnemers is van belang", "Nee, anonimiteit is niet noodzakelijk"},
+            {"Kleinschalig", "Klein groepsverband", "Middelgroot groepsverband", "Groot groepsverband", "Massaal", "Open"},
+            {"Ja, laagdrempeligheid is belangrijk", "Nee, laagdrempeligheid is niet noodzakelijk"},
+            {"Eenmalige sessie", "Meerdere sessies"},
+            {"Ja, het is belangrijk dat deelnemers kunnen leren en nieuwe dingen ondervinden", "Nee, leren is niet van toepassing"},
+            {"Ja, het is belangrijk dat de participatiewerkvorm innovatie en vernieuwing stimuleert", "Nee, innovatie en vernieuwing zijn niet van toepassing"},
+            {"Formele setting", "Informele setting"},
+            {"Open input", "Doelgerichte input"}
     };
 
-    // rätt svar på frågorna, skapas här
-    public static String[] correctAnswers = {
-            // rätt svar på första frågan
-            "World Wide Web",
-            // rätt svar på andra frågan
-            "Vaduz",
-            // rätt svar på tredje frågan, osv
-            "1954",
-            "Switzerland",
-            "Russia",
-            "China",
-            "Tokyo",
-            "O-Negative",
-            "2000",
-            "94"
+    public static int[][] answerMappings = {
+            {0, 1, 2, 3, 4, 5, 6}, // Question 1
+            {0, 1, 2, 3, 4, 5, 6}, // Question 2
+            {0, 1}, // Question 3
+            {0, 1, 2}, // Question 4
+            {0, 1}, // Question 5
+            {0, 1, 2, 3, 4, 5}, // Question 6
+            {0, 1, 2, 3}, // Question 7
+            {0, 1, 2, 3}, // Question 8
+            {0, 1}, // Question 9
+            {0, 1}, // Question 10
+            {0, 1, 2, 3, 4, 5}, // Question 11
+            {0, 1}, // Question 12
+            {0, 1}, // Question 13
+            {0, 1}, // Question 14
+            {0, 1}, // Question 15
+            {0, 1}, // Question 16
+            {0, 1} // Question 17
     };
-
 }

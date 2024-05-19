@@ -1,17 +1,12 @@
 package com.example.gesallprov;
 
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class HomeFragment extends Fragment {
@@ -33,8 +28,8 @@ public class HomeFragment extends Fragment {
 
         // sätter en knapp-lyssnare på knappen, roterar vid knapptryck
         findWorkform.setOnClickListener(new View.OnClickListener() {
-           // nedanstående kod funkar med att gå till quiz sidan men ikonen visar fortfarande
-            // att man är på "Home" även fast man ör på Quiz...
+            // nedanstående kod funkar med att gå till quiz sidan men ikonen visar fortfarande
+            // att man är på "Home" även fast man är på Quiz...
             @Override
             public void onClick(View v) {
                 replaceFragment(new QuizFragment());
@@ -48,7 +43,5 @@ public class HomeFragment extends Fragment {
         FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.frameLayout, fragment);
         fragmentTransaction.commit();
-
     }
-
 }

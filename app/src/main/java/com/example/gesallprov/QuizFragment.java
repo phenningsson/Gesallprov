@@ -1,11 +1,8 @@
 package com.example.gesallprov;
 
-import android.app.AlertDialog;
 import android.graphics.Color;
 import android.os.Bundle;
-
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,29 +11,22 @@ import android.widget.TextView;
 
 public class QuizFragment extends Fragment implements View.OnClickListener {
 
-    // deklarerar element som används i layouten
     private TextView tvTotalQ;
     private TextView tvQuestion;
     private Button answerABtn, answerBBtn, answerCBtn, answerDBtn, submitBtn;
 
-    // initialisering av variabler som används i koden
-    private int score = 0;
     private int totalQuestions = AnswerQuestion.question.length;
     private int currentQuestionsIndex = 0;
     private String selectedAnswer = "";
+    private int[] methodScores = new int[12]; // Updated for the number of methods
 
-    // deklarerar view här så att den kan nås globalt, behövs nås i fler klasser än bara onCreateView
     View view;
 
-    // onCreateView-metod som är en del av Fragment-klassen
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        // initialiserar view och inflate layouten för det här fragmentet
         view = inflater.inflate(R.layout.fragment_quiz, container, false);
 
-        // initialiserar och hittar alla deklarerade element i layouten
         tvTotalQ = view.findViewById(R.id.tvTotalQ);
         tvQuestion = view.findViewById(R.id.tvQuestion);
         answerABtn = view.findViewById(R.id.answerABtn);
@@ -45,95 +35,106 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         answerDBtn = view.findViewById(R.id.answerDBtn);
         submitBtn = view.findViewById(R.id.submitBtn);
 
-        // sätter onClick-lyssnare på alla knappar
         answerABtn.setOnClickListener(this);
         answerBBtn.setOnClickListener(this);
         answerCBtn.setOnClickListener(this);
         answerDBtn.setOnClickListener(this);
         submitBtn.setOnClickListener(this);
 
-        // sätter totala antalet frågor i textview
         tvTotalQ.setText("Total questions: " + totalQuestions);
 
-        // skapar ny fråga
         newQuestion();
 
-        //returnerar view
         return view;
     }
 
-    // onClick-metod som hanterar vad som händer när knappar klickas
     @Override
     public void onClick(View v) {
-
-        // sätter färgen på alla alternativ-knappar till vit
         answerABtn.setBackgroundColor(Color.WHITE);
         answerBBtn.setBackgroundColor(Color.WHITE);
         answerCBtn.setBackgroundColor(Color.WHITE);
         answerDBtn.setBackgroundColor(Color.WHITE);
 
-        // hämtar den klickade knappen
         Button clickedBtn = (Button) v;
-        //om submit-knappen är den som tryckts
-        if(clickedBtn.getId()==R.id.submitBtn) {
-            // om det valda svaret är korrekt så ökar poängen med 1
-            if (selectedAnswer.equals(AnswerQuestion.correctAnswers[currentQuestionsIndex])) {
-                score++;
+        if (clickedBtn.getId() == R.id.submitBtn) {
+            int selectedAnswerIndex = getSelectedAnswerIndex();
+            if (selectedAnswerIndex != -1) {
+                methodScores[AnswerQuestion.answerMappings[currentQuestionsIndex][selectedAnswerIndex]]++;
+                currentQuestionsIndex++;
+                newQuestion();
             }
-            // ökar indexet för nuvarande fråga med 1 och skapar en ny fråga
-            currentQuestionsIndex++;
-            newQuestion();
         } else {
-            //en av svarsalternativs-knapparna nedtryckt, ändrar färg på den nedtryckta knappen
             selectedAnswer = clickedBtn.getText().toString();
-            clickedBtn.setBackgroundColor(Color.rgb(55,0,179));
+            clickedBtn.setBackgroundColor(Color.rgb(55, 0, 179));
         }
     }
 
-    //metod som skapar ny frågoa
+    private int getSelectedAnswerIndex() {
+        if (selectedAnswer.equals(answerABtn.getText().toString())) {
+            return 0;
+        } else if (selectedAnswer.equals(answerBBtn.getText().toString())) {
+            return 1;
+        } else if (selectedAnswer.equals(answerCBtn.getText().toString())) {
+            return 2;
+        } else if (selectedAnswer.equals(answerDBtn.getText().toString())) {
+            return 3;
+        } else {
+            return -1;
+        }
+    }
+
     private void newQuestion() {
-        // om nuvarande frågeindex är samma som totala frågorna så anropas metod som avslutar quizet
         if (currentQuestionsIndex == totalQuestions) {
             finishQuiz();
             return;
         }
 
-        // sätter den nuvarande frågan i textview som visar frågan
         tvQuestion.setText(AnswerQuestion.question[currentQuestionsIndex]);
-        // sätter textview som visar alternativ A till det första alternativet av svar
-        answerABtn.setText(AnswerQuestion.choices[currentQuestionsIndex][0]);
-        // sätter textview som visar alternativ B till det andra alternativet av svar
-        answerBBtn.setText(AnswerQuestion.choices[currentQuestionsIndex][1]);
-        // sätter textview som visar alternativ C till det tredje alternativet av svar
-        answerCBtn.setText(AnswerQuestion.choices[currentQuestionsIndex][2]);
-        // sätter textview som visar alternativ D till det fjärde alternativet av svar
-        answerDBtn.setText(AnswerQuestion.choices[currentQuestionsIndex][3]);
+        String[] choices = AnswerQuestion.choices[currentQuestionsIndex];
+
+        answerABtn.setText(choices.length > 0 ? choices[0] : "");
+        answerBBtn.setText(choices.length > 1 ? choices[1] : "");
+        answerCBtn.setText(choices.length > 2 ? choices[2] : "");
+        answerDBtn.setText(choices.length > 3 ? choices[3] : "");
+
+        answerABtn.setVisibility(choices.length > 0 ? View.VISIBLE : View.GONE);
+        answerBBtn.setVisibility(choices.length > 1 ? View.VISIBLE : View.GONE);
+        answerCBtn.setVisibility(choices.length > 2 ? View.VISIBLE : View.GONE);
+        answerDBtn.setVisibility(choices.length > 3 ? View.VISIBLE : View.GONE);
     }
 
-    //metod som avslutar quizet
     private void finishQuiz() {
-        String passStatus = "";
-        //om du har mer än 60% rätt får du godkänt
-        if (score > totalQuestions *0.60) {
-            passStatus = "Passed";
-        } else {
-            passStatus = "Failed";
-        }
+        StringBuilder resultMessage = new StringBuilder();
+        resultMessage.append("Living Labs: ")
+                .append((methodScores[0] * 100) / totalQuestions)
+                .append("%\nWorld Café: ")
+                .append((methodScores[1] * 100) / totalQuestions)
+                .append("%\nEnquêteren: ")
+                .append((methodScores[2] * 100) / totalQuestions)
+                .append("%\nBurgerjury: ")
+                .append((methodScores[3] * 100) / totalQuestions)
+                .append("%\nKlankbord Groep: ")
+                .append((methodScores[4] * 100) / totalQuestions)
+                .append("%\nInspraak Bijeenkomst: ")
+                .append((methodScores[5] * 100) / totalQuestions)
+                .append("%\nStraat Interviews: ")
+                .append((methodScores[6] * 100) / totalQuestions)
+                .append("%\nSwipocratie: ")
+                .append((methodScores[7] * 100) / totalQuestions)
+                .append("%\nInteractieve Internet Omgeving: ")
+                .append((methodScores[8] * 100) / totalQuestions)
+                .append("%\nInteractieve Scenariobouw: ")
+                .append((methodScores[9] * 100) / totalQuestions)
+                .append("%\nKeukentafel Gesprekken: ")
+                .append((methodScores[10] * 100) / totalQuestions)
+                .append("%\nPhotovoice: ")
+                .append((methodScores[11] * 100) / totalQuestions)
+                .append("%");
 
-        // en AlertDialog som visar resultatet av quizet samt ger användaren möjlighet att starta om quizet
-        new AlertDialog.Builder(view.getContext())
-                .setTitle(passStatus)
-                .setMessage("Score is " + score + " out of " + totalQuestions)
-                .setPositiveButton("Restart!", (dialogInterface, i) -> restartQuiz() )
-                .setCancelable(false)
-                .show();
+        // Show results in the new ResultFragment
+        ResultFragment resultFragment = ResultFragment.newInstance(resultMessage.toString());
+        getActivity().getSupportFragmentManager().beginTransaction()
+                .replace(R.id.frameLayout, resultFragment)
+                .commit();
     }
-
-    // metod som startar om quizet och nollställer relevanta variabler
-    private void restartQuiz() {
-        score = 0;
-        currentQuestionsIndex = 0;
-        newQuestion();
-    }
-
 }

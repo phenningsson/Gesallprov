@@ -28,20 +28,44 @@
 
 
     <string name="homepageLogo">Homepage Logo</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="workform">Workform</string>
-    <string name="living_labs">Living Labs</string>
-    <string name="wordcaf">Wordcafé</string>
-    <string name="burgerjury">Burgerjury</string>
-    <string name="enqu_teren">Enquêteren</string>
-    <string name="klankbord_groep">Klankbord Groep</string>
-    <string name="inspraak_bijeenkomst">Inspraak Bijeenkomst</string>
-    <string name="straat_interviews">Straat Interviews</string>
-    <string name="interactieve_internet_omgeving">Interactieve Internet Omgeving</string>
-    <string name="interactieve_scenariobouw">Interactieve\nScenariobouw</string>
-    <string name="keukentafel_gesprekken">Keukentafel Gesprekken</string>
-    <string name="photovoice">Photovoice</string>
+
+        <string name="living_labs">Living Labs</string>
+        <string name="living_labs_description">Beschrijving van living labs...</string>
+
+        <string name="wordcaf">Word Café</string>
+        <string name="wordcaf_description">Description for Word Café...</string>
+
+        <string name="enqu_teren">Enquêteren</string>
+        <string name="enqu_teren_description">Description for Enquêteren...</string>
+
+        <string name="burgerjury">Burgerjury</string>
+        <string name="burgerjury_description">Description for Burgerjury...</string>
+
+        <string name="klankbord_groep">Klankbord Groep</string>
+        <string name="klankbord_groep_description">Description for Klankbord Groep...</string>
+
+        <string name="inspraak_bijeenkomst">Inspraak Bijeenkomst</string>
+        <string name="inspraak_bijeenkomst_description">Description for Inspraak Bijeenkomst...</string>
+
+        <string name="straat_interviews">Straat Interviews</string>
+        <string name="straat_interviews_description">Description for Straat Interviews...</string>
+
+        <string name="swipocratie">Swipocratie</string>
+        <string name="swipocratie_description">Description for Swipocratie...</string>
+
+        <string name="interactieve_internet_omgeving">Interactieve Internet Omgeving</string>
+        <string name="interactieve_internet_omgeving_description">Description for Interactieve Internet Omgeving...</string>
+
+        <string name="interactieve_scenariobouw">Interactieve Scenariobouw</string>
+        <string name="interactieve_scenariobouw_description">Description for Interactieve Scenariobouw...</string>
+
+        <string name="keukentafel_gesprekken">Keukentafel Gesprekken</string>
+        <string name="keukentafel_gesprekken_description">Description for Keukentafel Gesprekken...</string>
+
+        <string name="photovoice">Photovoice</string>
+        <string name="photovoice_description">Description for Photovoice...</string>
 
 
 </resources>
