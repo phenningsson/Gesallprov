@@ -18,11 +18,16 @@
     <string name="percentage">%</string>
     <string name="quiz">Quiz</string>
     <string name="questionPlaceholder">Question Placeholder</string>
-    <string name="totalQuestions">Total Questions:</string>
+    <string name="totalQuestions">Aantal Vragen:</string>
     <string name="answerA">Answer A</string>
     <string name="answerB">Answer B</string>
     <string name="answerC">Answer C</string>
     <string name="answerD">Answer D</string>
+    <string name="answerE">Answer E</string>
+    <string name="answerF">Answer F</string>
+    <string name="answerG">Answer G</string>
+    <string name="answerH">Answer H</string>
+    <string name="answerI">Answer I</string>
     <string name="submit">Submit</string>
     <string name="welcomeHeader">Find Your Workform!</string>
 

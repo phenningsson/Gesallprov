@@ -23,9 +23,9 @@ public class AnswerQuestion {
     };
 
     public static String[][] choices = {
-            {"Informeren", "Instrueren", "Adviseren", "Overtuigen", "Activeren", "Emotioneren", "Inspireren"},
+            {"Informeren", "Instrueren", "Adviseren", "Overtuigen", "Activeren", "Emotioneren", "Inspireren", "Informatie verzamelen", "Draagvlak creëren", "Besluitvorming"},
             {"Burgers", "Studenten", "Professionals", "Kinderen", "Jongeren", "30+", "65+"},
-            {"Belangrijk", "Onbelangrijk"},
+            {"Individu", "Groep"},
             {"Weinig", "Neutraal", "Veel"},
             {"Er is veel tijd beschikbaar", "Er is minder tijd beschikbaar"},
             {"Informeren", "Inspreken", "Consulteren", "Coproduceren / samenwerken", "Delegeren", "Zelfbestuur"},
@@ -43,7 +43,7 @@ public class AnswerQuestion {
     };
 
     public static int[][] answerMappings = {
-            {0, 1, 2, 3, 4, 5, 6}, // Question 1
+            {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, // Question 1
             {0, 1, 2, 3, 4, 5, 6}, // Question 2
             {0, 1}, // Question 3
             {0, 1, 2}, // Question 4

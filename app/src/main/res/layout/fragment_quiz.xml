@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- Denna xml fil innehåller layouten och designen för
- quiz-fragmentet -->
+<!-- Denna xml fil innehåller layouten och designen för quiz-fragmentet -->
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -12,115 +11,133 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
 
-
-        <TextView
-            android:id="@+id/tvTotalQ"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="@string/totalQuestions"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.100000024" />
-
-        <TextView
-            android:id="@+id/tvQuestion"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:text="@string/questionPlaceholder"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.18" />
+            app:layout_constraintEnd_toEndOf="parent">
 
-        <Button
-            android:id="@+id/answerABtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:backgroundTint="@color/white"
-            android:text="@string/answerA"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.35" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-        <Button
-            android:id="@+id/answerBBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:backgroundTint="@color/white"
-            android:text="@string/answerB"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.45" />
+                <TextView
+                    android:id="@+id/tvTotalQ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/totalQuestions"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="10dp"/>
 
-        <Button
-            android:id="@+id/answerCBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:backgroundTint="@color/white"
-            android:text="@string/answerC"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.55" />
+                <TextView
+                    android:id="@+id/tvQuestion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:text="@string/questionPlaceholder"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
-        <Button
-            android:id="@+id/answerDBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:backgroundTint="@color/white"
-            android:text="@string/answerD"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.65" />
+                <Button
+                    android:id="@+id/answerABtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/white"
+                    android:text="@string/answerA"
+                    android:textColor="@color/black" />
 
-        <Button
-            android:id="@+id/submitBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:drawableLeft="@drawable/baseline_thumb_up_24"
-            android:text="@string/submit"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.8" />
+                <Button
+                    android:id="@+id/answerBBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/white"
+                    android:text="@string/answerB"
+                    android:textColor="@color/black" />
 
+                <Button
+                    android:id="@+id/answerCBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/white"
+                    android:text="@string/answerC"
+                    android:textColor="@color/black" />
 
+                <Button
+                    android:id="@+id/answerDBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/white"
+                    android:text="@string/answerD"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:id="@+id/answerEBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/white"
+                    android:text="@string/answerE"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:id="@+id/answerFBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/white"
+                    android:text="@string/answerF"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:id="@+id/answerGBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/white"
+                    android:text="@string/answerG"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:id="@+id/answerHBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="@color/white"
+                    android:text="@string/answerH"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:id="@+id/answerIBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="@color/white"
+                    android:text="@string/answerI"
+                    android:textColor="@color/black" />
+
+                <Button
+                    android:id="@+id/submitBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/baseline_thumb_up_24"
+                    android:text="@string/submit"
+                    android:layout_gravity="center_horizontal"/>
+
+            </LinearLayout>
+        </ScrollView>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
 </FrameLayout>

@@ -8,12 +8,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class QuizFragment extends Fragment implements View.OnClickListener {
 
     private TextView tvTotalQ;
     private TextView tvQuestion;
-    private Button answerABtn, answerBBtn, answerCBtn, answerDBtn, submitBtn;
+    private Button answerABtn, answerBBtn, answerCBtn, answerDBtn, answerEBtn, answerFBtn,
+            answerGBtn, answerHBtn, answerIBtn, submitBtn;
 
     private int totalQuestions = AnswerQuestion.question.length;
     private int currentQuestionsIndex = 0;
@@ -33,12 +35,22 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         answerBBtn = view.findViewById(R.id.answerBBtn);
         answerCBtn = view.findViewById(R.id.answerCBtn);
         answerDBtn = view.findViewById(R.id.answerDBtn);
+        answerEBtn = view.findViewById(R.id.answerEBtn);
+        answerFBtn = view.findViewById(R.id.answerFBtn);
+        answerGBtn = view.findViewById(R.id.answerGBtn);
+        answerHBtn = view.findViewById(R.id.answerHBtn);
+        answerIBtn = view.findViewById(R.id.answerIBtn);
         submitBtn = view.findViewById(R.id.submitBtn);
 
         answerABtn.setOnClickListener(this);
         answerBBtn.setOnClickListener(this);
         answerCBtn.setOnClickListener(this);
         answerDBtn.setOnClickListener(this);
+        answerEBtn.setOnClickListener(this);
+        answerFBtn.setOnClickListener(this);
+        answerGBtn.setOnClickListener(this);
+        answerHBtn.setOnClickListener(this);
+        answerIBtn.setOnClickListener(this);
         submitBtn.setOnClickListener(this);
 
         tvTotalQ.setText("Total questions: " + totalQuestions);
@@ -50,10 +62,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-        answerABtn.setBackgroundColor(Color.WHITE);
-        answerBBtn.setBackgroundColor(Color.WHITE);
-        answerCBtn.setBackgroundColor(Color.WHITE);
-        answerDBtn.setBackgroundColor(Color.WHITE);
+        resetButtonBackgrounds();
 
         Button clickedBtn = (Button) v;
         if (clickedBtn.getId() == R.id.submitBtn) {
@@ -62,11 +71,25 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
                 methodScores[AnswerQuestion.answerMappings[currentQuestionsIndex][selectedAnswerIndex]]++;
                 currentQuestionsIndex++;
                 newQuestion();
+            } else {
+                Toast.makeText(getActivity(), "Please select an answer before submitting", Toast.LENGTH_SHORT).show();
             }
         } else {
             selectedAnswer = clickedBtn.getText().toString();
             clickedBtn.setBackgroundColor(Color.rgb(55, 0, 179));
         }
+    }
+
+    private void resetButtonBackgrounds() {
+        answerABtn.setBackgroundColor(Color.WHITE);
+        answerBBtn.setBackgroundColor(Color.WHITE);
+        answerCBtn.setBackgroundColor(Color.WHITE);
+        answerDBtn.setBackgroundColor(Color.WHITE);
+        answerEBtn.setBackgroundColor(Color.WHITE);
+        answerFBtn.setBackgroundColor(Color.WHITE);
+        answerGBtn.setBackgroundColor(Color.WHITE);
+        answerHBtn.setBackgroundColor(Color.WHITE);
+        answerIBtn.setBackgroundColor(Color.WHITE);
     }
 
     private int getSelectedAnswerIndex() {
@@ -78,6 +101,16 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
             return 2;
         } else if (selectedAnswer.equals(answerDBtn.getText().toString())) {
             return 3;
+        } else if (selectedAnswer.equals(answerEBtn.getText().toString())) {
+            return 4;
+        } else if (selectedAnswer.equals(answerFBtn.getText().toString())) {
+            return 5;
+        } else if (selectedAnswer.equals(answerGBtn.getText().toString())) {
+            return 6;
+        } else if (selectedAnswer.equals(answerHBtn.getText().toString())) {
+            return 7;
+        } else if (selectedAnswer.equals(answerIBtn.getText().toString())) {
+            return 8;
         } else {
             return -1;
         }
@@ -92,15 +125,17 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         tvQuestion.setText(AnswerQuestion.question[currentQuestionsIndex]);
         String[] choices = AnswerQuestion.choices[currentQuestionsIndex];
 
-        answerABtn.setText(choices.length > 0 ? choices[0] : "");
-        answerBBtn.setText(choices.length > 1 ? choices[1] : "");
-        answerCBtn.setText(choices.length > 2 ? choices[2] : "");
-        answerDBtn.setText(choices.length > 3 ? choices[3] : "");
+        Button[] buttons = {answerABtn, answerBBtn, answerCBtn, answerDBtn, answerEBtn, answerFBtn, answerGBtn, answerHBtn, answerIBtn};
 
-        answerABtn.setVisibility(choices.length > 0 ? View.VISIBLE : View.GONE);
-        answerBBtn.setVisibility(choices.length > 1 ? View.VISIBLE : View.GONE);
-        answerCBtn.setVisibility(choices.length > 2 ? View.VISIBLE : View.GONE);
-        answerDBtn.setVisibility(choices.length > 3 ? View.VISIBLE : View.GONE);
+        for (int i = 0; i < buttons.length; i++) {
+            if (i < choices.length) {
+                buttons[i].setText(choices[i]);
+                buttons[i].setVisibility(View.VISIBLE);
+            } else {
+                buttons[i].setVisibility(View.GONE);
+            }
+        }
+        selectedAnswer = ""; // Reset selected answer for new question
     }
 
     private void finishQuiz() {
