@@ -5,20 +5,20 @@
 
     <string name="app_name">Participation App</string>
 
-    <string name="home">Home</string>
+    <string name="home">Thuis</string>
 
     <string name="open_nav">Open Navigation Drawer</string>
 
     <string name="close_nav">Close Navigation Drawer</string>
 
-    <string name="about">About</string>
+    <string name="about">Over</string>
 
     <string name="backspace"> </string>
 
     <string name="percentage">%</string>
     <string name="quiz">Quiz</string>
     <string name="questionPlaceholder">Question Placeholder</string>
-    <string name="totalQuestions">Aantal Vragen:</string>
+    <string name="totalQuestions">Aantal vragen:</string>
     <string name="answerA">Answer A</string>
     <string name="answerB">Answer B</string>
     <string name="answerC">Answer C</string>
@@ -28,19 +28,19 @@
     <string name="answerG">Answer G</string>
     <string name="answerH">Answer H</string>
     <string name="answerI">Answer I</string>
-    <string name="submit">Submit</string>
-    <string name="welcomeHeader">Find Your Workform!</string>
+    <string name="submit">Volgende</string>
+    <string name="welcomeHeader">Vind je werkvorm!</string>
 
 
     <string name="homepageLogo">Homepage Logo</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="workform">Workform</string>
+    <string name="workform">Werkvorm</string>
 
         <string name="living_labs">Living Labs</string>
         <string name="living_labs_description">Beschrijving van living labs...</string>
 
-        <string name="wordcaf">Word Café</string>
-        <string name="wordcaf_description">Description for Word Café...</string>
+        <string name="wordcaf">World Café</string>
+        <string name="wordcaf_description">Description for World Café...</string>
 
         <string name="enqu_teren">Enquêteren</string>
         <string name="enqu_teren_description">Description for Enquêteren...</string>
@@ -48,29 +48,32 @@
         <string name="burgerjury">Burgerjury</string>
         <string name="burgerjury_description">Description for Burgerjury...</string>
 
-        <string name="klankbord_groep">Klankbord Groep</string>
+        <string name="klankbord_groep">Klankbord groep</string>
         <string name="klankbord_groep_description">Description for Klankbord Groep...</string>
 
-        <string name="inspraak_bijeenkomst">Inspraak Bijeenkomst</string>
+        <string name="inspraak_bijeenkomst">Inspraak bijeenkomst</string>
         <string name="inspraak_bijeenkomst_description">Description for Inspraak Bijeenkomst...</string>
 
-        <string name="straat_interviews">Straat Interviews</string>
+        <string name="straat_interviews">Straat interviews</string>
         <string name="straat_interviews_description">Description for Straat Interviews...</string>
 
         <string name="swipocratie">Swipocratie</string>
         <string name="swipocratie_description">Description for Swipocratie...</string>
 
-        <string name="interactieve_internet_omgeving">Interactieve Internet Omgeving</string>
+        <string name="interactieve_internet_omgeving">Interactieve Internet omgeving</string>
         <string name="interactieve_internet_omgeving_description">Description for Interactieve Internet Omgeving...</string>
 
-        <string name="interactieve_scenariobouw">Interactieve Scenariobouw</string>
+        <string name="interactieve_scenariobouw">Scenario- bouw</string>
         <string name="interactieve_scenariobouw_description">Description for Interactieve Scenariobouw...</string>
 
-        <string name="keukentafel_gesprekken">Keukentafel Gesprekken</string>
+        <string name="keukentafel_gesprekken">Keukentafel gesprekken</string>
         <string name="keukentafel_gesprekken_description">Description for Keukentafel Gesprekken...</string>
 
         <string name="photovoice">Photovoice</string>
         <string name="photovoice_description">Description for Photovoice...</string>
+    <string name="sluiten">Sluiten</string>
+    <string name="opnieuw">Opnieuw</string>
+    <string name="hoofdmenu">Hoofdmenu</string>
 
 
 </resources>

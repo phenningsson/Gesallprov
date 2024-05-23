@@ -19,13 +19,13 @@
         android:id="@+id/btnRestart"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Restart Quiz"/>
+        android:text="@string/opnieuw"/>
 
     <Button
         android:id="@+id/btnMainMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Main Menu"/>
+        android:text="@string/hoofdmenu"/>
 </LinearLayout>
 
 

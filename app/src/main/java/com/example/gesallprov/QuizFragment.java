@@ -20,7 +20,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     private int totalQuestions = AnswerQuestion.question.length;
     private int currentQuestionsIndex = 0;
     private String selectedAnswer = "";
-    private int[] methodScores = new int[12]; // Updated for the number of methods
+    private int[] methodScores = new int[12]; // Update for the number of methods (12 for now)
 
     View view;
 
@@ -53,7 +53,8 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         answerIBtn.setOnClickListener(this);
         submitBtn.setOnClickListener(this);
 
-        tvTotalQ.setText("Total questions: " + totalQuestions);
+        // Initialize the current question number display
+        tvTotalQ.setText("Vraag 1 van " + totalQuestions);
 
         newQuestion();
 
@@ -68,15 +69,27 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         if (clickedBtn.getId() == R.id.submitBtn) {
             int selectedAnswerIndex = getSelectedAnswerIndex();
             if (selectedAnswerIndex != -1) {
-                methodScores[AnswerQuestion.answerMappings[currentQuestionsIndex][selectedAnswerIndex]]++;
+                methodScores[0] += MethodWeightings.livingLabsWeights[currentQuestionsIndex][selectedAnswerIndex];
+                methodScores[1] += MethodWeightings.worldCafeWeights[currentQuestionsIndex][selectedAnswerIndex];
+                methodScores[2] += MethodWeightings.enqueterenWeights[currentQuestionsIndex][selectedAnswerIndex];
+                methodScores[3] += MethodWeightings.burgerjuryWeights[currentQuestionsIndex][selectedAnswerIndex];
+                methodScores[4] += MethodWeightings.klankbordgroepWeights[currentQuestionsIndex][selectedAnswerIndex];
+                methodScores[5] += MethodWeightings.inspraakbijeenkomstWeights[currentQuestionsIndex][selectedAnswerIndex];
+                methodScores[6] += MethodWeightings.straatinterviewsWeights[currentQuestionsIndex][selectedAnswerIndex];
+                methodScores[7] += MethodWeightings.scenariobouwWeights[currentQuestionsIndex][selectedAnswerIndex];
+                methodScores[8] += MethodWeightings.interactieveInternetomgevingWeights[currentQuestionsIndex][selectedAnswerIndex];
+                methodScores[9] += MethodWeightings.keukentafelgesprekkenWeights[currentQuestionsIndex][selectedAnswerIndex];
+                methodScores[10] += MethodWeightings.photovoiceWeights[currentQuestionsIndex][selectedAnswerIndex];
+                methodScores[11] += MethodWeightings.swipocratieWeights[currentQuestionsIndex][selectedAnswerIndex];
                 currentQuestionsIndex++;
                 newQuestion();
             } else {
-                Toast.makeText(getActivity(), "Please select an answer before submitting", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "Voer antwoord in", Toast.LENGTH_SHORT).show();
             }
         } else {
             selectedAnswer = clickedBtn.getText().toString();
-            clickedBtn.setBackgroundColor(Color.rgb(55, 0, 179));
+            clickedBtn.setBackgroundColor(Color.rgb(0, 0, 0));
+            clickedBtn.setTextColor(Color.rgb(255, 255, 255));
         }
     }
 
@@ -90,6 +103,17 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         answerGBtn.setBackgroundColor(Color.WHITE);
         answerHBtn.setBackgroundColor(Color.WHITE);
         answerIBtn.setBackgroundColor(Color.WHITE);
+
+        answerABtn.setTextColor(Color.BLACK);
+        answerBBtn.setTextColor(Color.BLACK);
+        answerCBtn.setTextColor(Color.BLACK);
+        answerDBtn.setTextColor(Color.BLACK);
+        answerEBtn.setTextColor(Color.BLACK);
+        answerFBtn.setTextColor(Color.BLACK);
+        answerGBtn.setTextColor(Color.BLACK);
+        answerHBtn.setTextColor(Color.BLACK);
+        answerIBtn.setTextColor(Color.BLACK);
+
     }
 
     private int getSelectedAnswerIndex() {
@@ -122,6 +146,9 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
             return;
         }
 
+        // Update the current question number display
+        tvTotalQ.setText("Vraag " + (currentQuestionsIndex + 1) + " van " + totalQuestions);
+
         tvQuestion.setText(AnswerQuestion.question[currentQuestionsIndex]);
         String[] choices = AnswerQuestion.choices[currentQuestionsIndex];
 
@@ -141,29 +168,29 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     private void finishQuiz() {
         StringBuilder resultMessage = new StringBuilder();
         resultMessage.append("Living Labs: ")
-                .append((methodScores[0] * 100) / totalQuestions)
+                .append((methodScores[0] * 100) / MethodWeightings.maxPointsLivingLabs)
                 .append("%\nWorld Café: ")
-                .append((methodScores[1] * 100) / totalQuestions)
+                .append((methodScores[1] * 100) / MethodWeightings.maxPointsWorldCafe)
                 .append("%\nEnquêteren: ")
-                .append((methodScores[2] * 100) / totalQuestions)
+                .append((methodScores[2] * 100) / MethodWeightings.maxPointsEnqueteren)
                 .append("%\nBurgerjury: ")
-                .append((methodScores[3] * 100) / totalQuestions)
+                .append((methodScores[3] * 100) / MethodWeightings.maxPointsBurgerjury)
                 .append("%\nKlankbord Groep: ")
-                .append((methodScores[4] * 100) / totalQuestions)
+                .append((methodScores[4] * 100) / MethodWeightings.maxPointsKlankbordgroep)
                 .append("%\nInspraak Bijeenkomst: ")
-                .append((methodScores[5] * 100) / totalQuestions)
+                .append((methodScores[5] * 100) / MethodWeightings.maxPointsInspraakbijeenkomst)
                 .append("%\nStraat Interviews: ")
-                .append((methodScores[6] * 100) / totalQuestions)
-                .append("%\nSwipocratie: ")
-                .append((methodScores[7] * 100) / totalQuestions)
+                .append((methodScores[6] * 100) / MethodWeightings.maxPointsStraatinterviews)
+                .append("%\nScenariobouw: ")
+                .append((methodScores[7] * 100) / MethodWeightings.maxPointsScenariobouw)
                 .append("%\nInteractieve Internet Omgeving: ")
-                .append((methodScores[8] * 100) / totalQuestions)
-                .append("%\nInteractieve Scenariobouw: ")
-                .append((methodScores[9] * 100) / totalQuestions)
+                .append((methodScores[8] * 100) / MethodWeightings.maxPointsInteractieveInternetomgeving)
                 .append("%\nKeukentafel Gesprekken: ")
-                .append((methodScores[10] * 100) / totalQuestions)
+                .append((methodScores[9] * 100) / MethodWeightings.maxPointsKeukentafelgesprekken)
                 .append("%\nPhotovoice: ")
-                .append((methodScores[11] * 100) / totalQuestions)
+                .append((methodScores[10] * 100) / MethodWeightings.maxPointsPhotovoice)
+                .append("%\nSwipocratie: ")
+                .append((methodScores[11] * 100) / MethodWeightings.maxPointsSwipocratie)
                 .append("%");
 
         // Show results in the new ResultFragment

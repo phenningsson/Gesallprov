@@ -119,9 +119,9 @@
 
                 <ImageView
                     android:id="@+id/enqueteren_image"
-                    android:layout_width="130dp"
-                    android:layout_height="130dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_width="145dp"
+                    android:layout_height="145dp"
+                    android:layout_marginTop="4dp"
                     android:layout_marginEnd="4dp"
                     android:src="@drawable/enqueteren_image"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -191,9 +191,9 @@
 
                 <ImageView
                     android:id="@+id/klankbord_image"
-                    android:layout_width="130dp"
-                    android:layout_height="130dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_width="167dp"
+                    android:layout_height="167dp"
+                    android:layout_marginTop="3dp"
                     android:layout_marginEnd="4dp"
                     android:src="@drawable/klankbord_image"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -226,10 +226,9 @@
 
                 <ImageView
                     android:id="@+id/inspraak_image"
-                    android:layout_width="130dp"
-                    android:layout_height="130dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="4dp"
+                    android:layout_width="162dp"
+                    android:layout_height="167dp"
+                    android:layout_marginTop="4dp"
                     android:src="@drawable/inspraak_image"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -262,11 +261,13 @@
 
                 <ImageView
                     android:id="@+id/straat_image"
-                    android:layout_width="130dp"
-                    android:layout_height="130dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_width="175dp"
+                    android:layout_height="175dp"
+                    android:layout_marginTop="4dp"
                     android:layout_marginEnd="4dp"
+                    android:layout_marginBottom="4dp"
                     android:src="@drawable/straat_image"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -300,8 +301,8 @@
                     android:id="@+id/swipocratie_image"
                     android:layout_width="130dp"
                     android:layout_height="130dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="4dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="16dp"
                     android:src="@drawable/swipocratie_image"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -396,21 +397,20 @@
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="32dp"
                     android:layout_marginEnd="8dp"
-                    android:text="@string/keukentafel_gesprekken"
                     android:fontFamily="@font/philosopher_bold"
+                    android:text="@string/keukentafel_gesprekken"
                     android:textColor="@color/black"
                     android:textSize="32dp"
                     app:layout_constraintEnd_toStartOf="@+id/keukentafel_image"
-                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintHorizontal_bias="1.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/keukentafel_image"
-                    android:layout_width="130dp"
-                    android:layout_height="130dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="4dp"
+                    android:layout_width="160dp"
+                    android:layout_height="167dp"
+                    android:layout_marginTop="4dp"
                     android:src="@drawable/keukentafel_image"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
