@@ -3,7 +3,7 @@
     <!-- Denna xml fil innehåller applikationens olika stringvärden och dess innehåll -->
 
 
-    <string name="app_name">Participation App</string>
+    <string name="app_name">ParticiGuide</string>
 
     <string name="home">Thuis</string>
 
@@ -28,49 +28,50 @@
     <string name="answerG">Answer G</string>
     <string name="answerH">Answer H</string>
     <string name="answerI">Answer I</string>
+    <string name="answerJ">answerJ</string>
     <string name="submit">Volgende</string>
     <string name="welcomeHeader">Vind je werkvorm!</string>
 
 
     <string name="homepageLogo">Homepage Logo</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="workform">Werkvorm</string>
+    <string name="workform">Werkvormen</string>
 
         <string name="living_labs">Living Labs</string>
-        <string name="living_labs_description">Beschrijving van living labs...</string>
+        <string name="living_labs_description">De participatiewerkvorm Living Labs is een innovatief onderzoeks- en ontwikkelingsconcept dat draait om “real-world” experimenten en testen van nieuwe technologieën en ideeën in samenwerking met eindgebruikers.</string>
 
         <string name="wordcaf">World Café</string>
-        <string name="wordcaf_description">Description for World Café...</string>
+        <string name="wordcaf_description">Een World Café is een gestructureerde, maar informele conversatievorm die bij breed scala van onderwerpen kan worden ingezet. Het bevordert gesprekken en samenwerking en stimuleert het onderling delen van ideeën. Het is ontworpen om flexibel te zijn en kan goed worden aangepast aan diverse omstandigheden.</string>
 
         <string name="enqu_teren">Enquêteren</string>
-        <string name="enqu_teren_description">Description for Enquêteren...</string>
+        <string name="enqu_teren_description">Deze werkvorm is voor het verzamelen van informatie en meningen over diverse onderwerpen. Het omvat het stellen van vragen aan individuen of groepen die zowel kwantitatieve als kwalitatieve gegevens kan opleveren, afhankelijk van de vragen en gebruikte methodologie. De vragen voor de enquête kunnen op diverse manieren worden opgesteld; gesloten, halfopen en open.</string>
 
         <string name="burgerjury">Burgerjury</string>
-        <string name="burgerjury_description">Description for Burgerjury...</string>
+        <string name="burgerjury_description">Een burgerjury is een participatieve democratische werkvorm waarbij deelnemers worden geselecteerd door de initiatiefnemer, vaak een overheidsinstantie. De burgerjury bestaat uit een groep burger zonder specifieke expertise. De burgerjury zal voorafgaand aan beslissingen advies uitbrengen over een vraagstuk of onderwerp waarmee de stem van de bevolking beter vertegenwoordig wordt bij besluitvorming.</string>
 
         <string name="klankbord_groep">Klankbord groep</string>
-        <string name="klankbord_groep_description">Description for Klankbord Groep...</string>
+        <string name="klankbord_groep_description">Bij de participatiewerkvorm wordt er een groep mensen geselecteerd en samengebracht om te adviseren en feedback te geven over specifieke ontwerpen, projecten of initiatieven. De klankbordgroep wordt samengesteld met aandacht voor een juist evenwicht in deelnemers zodat verschillende perspectieven en kennis vertegenwoordigd zijn.</string>
 
         <string name="inspraak_bijeenkomst">Inspraak bijeenkomst</string>
-        <string name="inspraak_bijeenkomst_description">Description for Inspraak Bijeenkomst...</string>
+        <string name="inspraak_bijeenkomst_description">Deze participatiewerkvorm is een georganiseerde gelegenheid waarbij betrokkenen ( burgers, maatschappelijke organisaties en bedrijven) een mogelijkheid krijgen om hun inzichten, standpunten, ideeën en zorgen kunnen delen. De gewonnen inzichten dragen bij aan de besluitvorming van de initiatiefnemers.</string>
 
         <string name="straat_interviews">Straat interviews</string>
-        <string name="straat_interviews_description">Description for Straat Interviews...</string>
+        <string name="straat_interviews_description">Bij deze werkvorm gaan initiatiefnemers de straat op om bij burgers een (vaak kort) interview af te nemen over een desbetreffend onderwerp. Er worden willekeurige voorbijgangers vragen gesteld om zo een direct meningen, ervaringen en perspectieven van mensen op een kwalitatieve manier te verzamelen.</string>
 
         <string name="swipocratie">Swipocratie</string>
-        <string name="swipocratie_description">Description for Swipocratie...</string>
+        <string name="swipocratie_description">Swipocratie is een online participatiewerkvorm. Met deze werkvorm kunnen er enkel gesloten vragen worden beantwoord. Stellingen worden beantwoord door middel van het swipen naar links of rechts. Deelnemers hebben bij deze werkvorm de mogelijkheid om gegevens achter te laten na deelname om verder deel te nemen in het participatieproces.</string>
 
         <string name="interactieve_internet_omgeving">Interactieve Internet omgeving</string>
-        <string name="interactieve_internet_omgeving_description">Description for Interactieve Internet Omgeving...</string>
+        <string name="interactieve_internet_omgeving_description">Een interactieve internetomgeving is een online platform, website of andere applicatie waarop actief kan worden deelgenomen door participanten. Deze werkvorm bied tweerichtingsverkeer, informatie wordt gepresenteerd aan gebruikers en biedt bezoekers aan de omgeving een mogelijkheid om te reageren, delen en bijdragen.</string>
 
         <string name="interactieve_scenariobouw">Scenario- bouw</string>
-        <string name="interactieve_scenariobouw_description">Description for Interactieve Scenariobouw...</string>
+        <string name="interactieve_scenariobouw_description">Bij deze participatiewerkvorm worden er mogelijke toekomstscenario’s gecreëerd en verkennend. Deelnemers worden aangemoedigd om samen te werken, ideeën te delen en verschillende toekomstscenario’s te ontwikkelen.</string>
 
         <string name="keukentafel_gesprekken">Keukentafel gesprekken</string>
-        <string name="keukentafel_gesprekken_description">Description for Keukentafel Gesprekken...</string>
+        <string name="keukentafel_gesprekken_description">Keukentafelgespreken zijn het vaakst gezet in een informele setting. Het zijn 1 op 1 gespreken tussen de initiatiefnemer en de participant. Het is afgeleid van de informele sfeer dat een keukentafelgesprek thuis creëert. Een belangrijk onderdeel van deze werkvorm is dat de initiatiefnemers direct contact heeft met de deelnemers.</string>
 
         <string name="photovoice">Photovoice</string>
-        <string name="photovoice_description">Description for Photovoice...</string>
+        <string name="photovoice_description">Deze werkvorm biedt deelnemers een unieke manier om hun ervaringen, perspectieven en verhalen te delen door middel van fotografie. De werkvorm geeft deelnemers de mogelijkheid hun stem te laten horen via een visuele vorm.  Het kan complexere onderwerpen gemakkelijker bespreekbaar maken door de ondersteuning van beeldmateriaal.</string>
     <string name="sluiten">Sluiten</string>
     <string name="opnieuw">Opnieuw</string>
     <string name="hoofdmenu">Hoofdmenu</string>

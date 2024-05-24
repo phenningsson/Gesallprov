@@ -1,32 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- res/layout/fragment_result.xml -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp">
 
-    <TextView
-        android:id="@+id/tvResults"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:paddingBottom="8dp"
-        android:text="Results"/>
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnRestart"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/opnieuw"/>
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:paddingBottom="16dp"
+            android:text="Je resultaat:"
+            android:textColor="@android:color/black"
+            android:gravity="center"/>
 
-    <Button
-        android:id="@+id/btnMainMenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/hoofdmenu"/>
-</LinearLayout>
+        <!-- Top Method -->
+        <LinearLayout
+            android:id="@+id/topMethodLayout"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/border">
 
+            <ImageView
+                android:id="@+id/ivTopMethodImage"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginEnd="8dp"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"/>
 
+            <TextView
+                android:id="@+id/tvTopMethodName"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:textColor="@android:color/black"/>
+        </LinearLayout>
 
+        <!-- Second Method -->
+        <LinearLayout
+            android:id="@+id/secondMethodLayout"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/border">
+
+            <ImageView
+                android:id="@+id/ivSecondMethodImage"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginEnd="8dp"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:id="@+id/tvSecondMethodName"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:textColor="@android:color/black"/>
+        </LinearLayout>
+
+        <!-- Third Method -->
+        <LinearLayout
+            android:id="@+id/thirdMethodLayout"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/border">
+
+            <ImageView
+                android:id="@+id/ivThirdMethodImage"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_marginEnd="8dp"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:id="@+id/tvThirdMethodName"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:textColor="@android:color/black"/>
+        </LinearLayout>
+
+        <!-- Lower Scored Methods Title -->
+        <TextView
+            android:id="@+id/tvLowerScoredMethodsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingTop="16dp"
+            android:paddingBottom="8dp"
+            android:text="Lager scorende participatiewerkvormen:"
+            android:gravity="center"
+            android:textColor="@android:color/black"/>
+
+        <!-- Lower Scored Methods -->
+        <LinearLayout
+            android:id="@+id/lowerScoredMethodsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@drawable/border">
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnRestart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/opnieuw"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif"/>
+
+        <Button
+            android:id="@+id/btnMainMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hoofdmenu"
+            android:layout_marginTop="8dp"
+            android:fontFamily="sans-serif"/>
+
+    </LinearLayout>
+</ScrollView>

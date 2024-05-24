@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!-- Denna xml fil innehåller layouten och designen för quiz-fragmentet -->
-
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -52,89 +50,109 @@
                     android:id="@+id/answerABtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="8dp"
                     android:backgroundTint="@color/white"
                     android:text="@string/answerA"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif"/>
 
                 <Button
                     android:id="@+id/answerBBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="8dp"
                     android:backgroundTint="@color/white"
                     android:text="@string/answerB"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif"/>
 
                 <Button
                     android:id="@+id/answerCBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="8dp"
                     android:backgroundTint="@color/white"
                     android:text="@string/answerC"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif"/>
 
                 <Button
                     android:id="@+id/answerDBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="8dp"
                     android:backgroundTint="@color/white"
                     android:text="@string/answerD"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif"/>
 
                 <Button
                     android:id="@+id/answerEBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="8dp"
                     android:backgroundTint="@color/white"
                     android:text="@string/answerE"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif"/>
 
                 <Button
                     android:id="@+id/answerFBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="8dp"
                     android:backgroundTint="@color/white"
                     android:text="@string/answerF"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif"/>
 
                 <Button
                     android:id="@+id/answerGBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="8dp"
                     android:backgroundTint="@color/white"
                     android:text="@string/answerG"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif"/>
 
                 <Button
                     android:id="@+id/answerHBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
+                    android:layout_marginBottom="8dp"
                     android:backgroundTint="@color/white"
                     android:text="@string/answerH"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif"/>
 
                 <Button
                     android:id="@+id/answerIBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="8dp"
                     android:backgroundTint="@color/white"
                     android:text="@string/answerI"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif"/>
+
+                <Button
+                    android:id="@+id/answerJBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="@color/white"
+                    android:text="@string/answerJ"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif"/>
 
                 <Button
                     android:id="@+id/submitBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/submit"
-                    android:layout_gravity="center_horizontal"/>
+                    android:layout_gravity="center_horizontal"
+                    android:fontFamily="sans-serif"/>
 
             </LinearLayout>
         </ScrollView>

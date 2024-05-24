@@ -15,7 +15,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     private TextView tvTotalQ;
     private TextView tvQuestion;
     private Button answerABtn, answerBBtn, answerCBtn, answerDBtn, answerEBtn, answerFBtn,
-            answerGBtn, answerHBtn, answerIBtn, submitBtn;
+            answerGBtn, answerHBtn, answerIBtn, answerJBtn, submitBtn;
 
     private int totalQuestions = AnswerQuestion.question.length;
     private int currentQuestionsIndex = 0;
@@ -40,6 +40,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         answerGBtn = view.findViewById(R.id.answerGBtn);
         answerHBtn = view.findViewById(R.id.answerHBtn);
         answerIBtn = view.findViewById(R.id.answerIBtn);
+        answerJBtn = view.findViewById(R.id.answerJBtn);
         submitBtn = view.findViewById(R.id.submitBtn);
 
         answerABtn.setOnClickListener(this);
@@ -51,6 +52,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         answerGBtn.setOnClickListener(this);
         answerHBtn.setOnClickListener(this);
         answerIBtn.setOnClickListener(this);
+        answerJBtn.setOnClickListener(this);
         submitBtn.setOnClickListener(this);
 
         // Initialize the current question number display
@@ -103,6 +105,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         answerGBtn.setBackgroundColor(Color.WHITE);
         answerHBtn.setBackgroundColor(Color.WHITE);
         answerIBtn.setBackgroundColor(Color.WHITE);
+        answerJBtn.setBackgroundColor(Color.WHITE);
 
         answerABtn.setTextColor(Color.BLACK);
         answerBBtn.setTextColor(Color.BLACK);
@@ -113,7 +116,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         answerGBtn.setTextColor(Color.BLACK);
         answerHBtn.setTextColor(Color.BLACK);
         answerIBtn.setTextColor(Color.BLACK);
-
+        answerJBtn.setTextColor(Color.BLACK);
     }
 
     private int getSelectedAnswerIndex() {
@@ -135,6 +138,8 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
             return 7;
         } else if (selectedAnswer.equals(answerIBtn.getText().toString())) {
             return 8;
+        } else if (selectedAnswer.equals(answerJBtn.getText().toString())) {
+            return 9;
         } else {
             return -1;
         }
@@ -152,7 +157,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         tvQuestion.setText(AnswerQuestion.question[currentQuestionsIndex]);
         String[] choices = AnswerQuestion.choices[currentQuestionsIndex];
 
-        Button[] buttons = {answerABtn, answerBBtn, answerCBtn, answerDBtn, answerEBtn, answerFBtn, answerGBtn, answerHBtn, answerIBtn};
+        Button[] buttons = {answerABtn, answerBBtn, answerCBtn, answerDBtn, answerEBtn, answerFBtn, answerGBtn, answerHBtn, answerIBtn, answerJBtn};
 
         for (int i = 0; i < buttons.length; i++) {
             if (i < choices.length) {

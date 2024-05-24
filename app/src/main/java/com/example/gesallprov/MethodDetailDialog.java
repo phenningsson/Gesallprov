@@ -46,6 +46,9 @@ public class MethodDetailDialog extends DialogFragment {
         TextView tvDescription = view.findViewById(R.id.tvDescription);
         Button btnClose = view.findViewById(R.id.btnClose);
 
+        // Modify the title to present as one word if it matches any specific method names
+        title = formatMethodName(title);
+
         tvTitle.setText(title);
         tvDescription.setText(description);
 
@@ -60,5 +63,24 @@ public class MethodDetailDialog extends DialogFragment {
         Dialog dialog = super.onCreateDialog(savedInstanceState);
         dialog.setTitle(title);
         return dialog;
+    }
+
+    private String formatMethodName(String methodName) {
+        switch (methodName) {
+            case "Klankbord groep":
+                return "Klankbordgroep";
+            case "Inspraak bijeenkomst":
+                return "Inspraakbijeenkomst";
+            case "Straat interviews":
+                return "Straatinterviews";
+            case "Interactieve Internet omgeving":
+                return "Interactieve Internetomgeving";
+            case "Keukentafel gesprekken":
+                return "Keukentafelgesprekken";
+            case "Scenario- bouw":
+                return "Scenariobouw";
+            default:
+                return methodName;
+        }
     }
 }
