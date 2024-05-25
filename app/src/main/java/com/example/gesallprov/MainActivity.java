@@ -9,27 +9,27 @@ import com.example.gesallprov.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
-    // skapa instans av ActivityMainBinding
+    // Maak een instantie van ActivityMainBinding
     ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // skapa en instans av ActivityMainBinding och hämta XML-filen
+        // Maak een instantie van ActivityMainBinding en haal de XML-layout op
         binding = ActivityMainBinding.inflate(getLayoutInflater());
 
-        // sätt layouten till att vara aktivitetens rotelement
+        // Stel de inhoud van de activiteit in op de root-view van de binding
         setContentView(binding.getRoot());
 
-        // byt ut det nuvarande fragmentet till startsidan vid app-start
+        // Vervang het huidige fragment door het HomeFragment bij het opstarten van de app
         replaceFragment(new HomeFragment());
 
-        // lyssna på klick på navigeringsfältet (bottomNavigationView), som skapats
-        // i resurmappen "menu"
+        // Luister naar klikken op de navigatiebalk onderaan (bottomNavigationView),
+        // die is gemaakt in de map "menu" met resource-bestanden
         binding.bottomNavigationView.setOnItemSelectedListener(item -> {
 
-            // Byt ut fragmentet beroende på vilken knapp som klickats på i navigeringsfältet
+            // Vervang het fragment afhankelijk van welke knop in de navigatiebalk is aangeklikt
             switch (item.getItemId()){
 
                 case R.id.home:
@@ -45,15 +45,15 @@ public class MainActivity extends AppCompatActivity {
                     replaceFragment(new AboutFragment());
                     break;
             }
-            return true;
+            return true; // Geef aan dat het item is geselecteerd
         });
     }
 
-    // metod för att byta ut fragmentet på aktivitetens rotelement
+    // Methode om het fragment op de root-view van de activiteit te vervangen
     private void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frameLayout, fragment);
-        fragmentTransaction.commit();
+        fragmentTransaction.replace(R.id.frameLayout, fragment); // Vervang het huidige fragment
+        fragmentTransaction.commit(); // Bevestig de transactie
     }
 }

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Denna xml fil innehåller layouten och designen för quiz-fragmentet -->
+<!-- Deze xml-file bevat de layout en het ontwerp voor het quiz-fragment -->
+
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,10 +8,12 @@
     android:layout_height="match_parent"
     tools:context=".QuizFragment">
 
+    <!-- ConstraintLayout wordt gebruikt om de elementen flexibel te plaatsen -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!-- ScrollView maakt het mogelijk om te scrollen als de inhoud groter is dan het scherm -->
         <ScrollView
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -19,12 +22,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
+            <!-- LinearLayout plaatst de elementen verticaal onder elkaar -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="16dp">
 
+                <!-- TextView voor het totaal aantal vragen -->
                 <TextView
                     android:id="@+id/tvTotalQ"
                     android:layout_width="wrap_content"
@@ -35,6 +40,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginBottom="10dp"/>
 
+                <!-- TextView voor de huidige vraag -->
                 <TextView
                     android:id="@+id/tvQuestion"
                     android:layout_width="match_parent"
@@ -46,6 +52,7 @@
                     android:textSize="24sp"
                     android:textStyle="bold" />
 
+                <!-- Knoppen voor de antwoordopties A tot en met J -->
                 <Button
                     android:id="@+id/answerABtn"
                     android:layout_width="match_parent"
@@ -146,6 +153,7 @@
                     android:textColor="@color/black"
                     android:fontFamily="sans-serif"/>
 
+                <!-- Knop om het antwoord in te sturen -->
                 <Button
                     android:id="@+id/submitBtn"
                     android:layout_width="wrap_content"

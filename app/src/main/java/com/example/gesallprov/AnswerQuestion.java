@@ -2,6 +2,7 @@ package com.example.gesallprov;
 
 public class AnswerQuestion {
 
+    // Array met de vragen voor het quiz
     public static String[] question = {
             "Wat is het belangrijkste doel van de participatiewerkvorm die je wil inzetten?",
             "Voor welke doelgroep wil je participatie inzetten?",
@@ -22,6 +23,7 @@ public class AnswerQuestion {
             "Wil je de input van de deelnemers tijdens de participatiewerkvorm open of doelgericht laten verlopen?"
     };
 
+    // Array met de mogelijke keuzes voor elke vraag
     public static String[][] choices = {
             {"Informeren", "Instrueren", "Adviseren", "Overtuigen", "Activeren", "Emotioneren", "Inspireren", "Informatie verzamelen", "Draagvlak creëren", "Besluitvorming"},
             {"Burgers", "Studenten", "Professionals", "Kinderen", "Jongeren", "30+", "65+"},
@@ -42,6 +44,7 @@ public class AnswerQuestion {
             {"Open input", "Doelgerichte input"}
     };
 
+    // aantal vraagalternatieven per vraag
     public static int[][] answerMappings = {
             {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}, // Question 1
             {0, 1, 2, 3, 4, 5, 6}, // Question 2

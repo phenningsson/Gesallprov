@@ -1,7 +1,6 @@
 <resources>
 
-    <!-- Denna xml fil innehåller applikationens olika stringvärden och dess innehåll -->
-
+    <!-- Dit XML-bestand bevat de verschillende tekenreekswaarden van de toepassing en de inhoud ervan -->
 
     <string name="app_name">ParticiGuide</string>
 

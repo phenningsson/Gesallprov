@@ -21,7 +21,7 @@ public class ResultFragment extends Fragment {
     private String results;
 
     public ResultFragment() {
-        // Required empty public constructor
+        // Vereiste lege constructor
     }
 
     public static ResultFragment newInstance(String results) {
@@ -45,6 +45,7 @@ public class ResultFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_result, container, false);
 
+        // Initialiseer de TextViews en ImageViews voor de topmethodes
         TextView tvTopMethodName = view.findViewById(R.id.tvTopMethodName);
         ImageView ivTopMethodImage = view.findViewById(R.id.ivTopMethodImage);
         LinearLayout topMethodLayout = view.findViewById(R.id.topMethodLayout);
@@ -61,9 +62,10 @@ public class ResultFragment extends Fragment {
         Button btnRestart = view.findViewById(R.id.btnRestart);
         Button btnMainMenu = view.findViewById(R.id.btnMainMenu);
 
-        // Sort results
+        // Sorteer de resultaten
         List<Result> sortedResults = sortResults(results);
 
+        // Toon de top 3 methodes
         if (sortedResults.size() > 0) {
             Result topResult = sortedResults.get(0);
             tvTopMethodName.setText(formatMethodName(topResult.getMethodName()) + ": " + topResult.getScore() + "%");
@@ -83,7 +85,7 @@ public class ResultFragment extends Fragment {
             thirdMethodLayout.setBackgroundResource(getBorderResource(thirdResult.getMethodName()));
         }
 
-        // Handle lower scored methods
+        // Toon de methodes met lagere scores
         for (int i = 3; i < sortedResults.size(); i++) {
             Result result = sortedResults.get(i);
             TextView tvLowerMethod = new TextView(getContext());
@@ -92,15 +94,16 @@ public class ResultFragment extends Fragment {
             lowerScoredMethodsLayout.addView(tvLowerMethod);
         }
 
+        // Stel kliklisteners in voor de knoppen
         btnRestart.setOnClickListener(v -> {
-            // Navigate back to the quiz fragment to restart
+            // Ga terug naar het quiz fragment om opnieuw te starten
             getActivity().getSupportFragmentManager().beginTransaction()
                     .replace(R.id.frameLayout, new QuizFragment())
                     .commit();
         });
 
         btnMainMenu.setOnClickListener(v -> {
-            // Navigate back to the main menu
+            // Ga terug naar het hoofdmenu
             getActivity().getSupportFragmentManager().beginTransaction()
                     .replace(R.id.frameLayout, new HomeFragment())
                     .commit();
@@ -110,6 +113,7 @@ public class ResultFragment extends Fragment {
     }
 
     private List<Result> sortResults(String results) {
+        // Splits de resultaten op per regel en maak een lijst van Result-objecten
         String[] lines = results.split("\n");
         List<Result> resultList = new ArrayList<>();
 
@@ -122,11 +126,13 @@ public class ResultFragment extends Fragment {
             }
         }
 
+        // Sorteer de lijst van hoog naar laag op basis van score
         Collections.sort(resultList, Comparator.comparingInt(Result::getScore).reversed());
         return resultList;
     }
 
     private int getImageResource(String methodName) {
+        // Haal de juiste afbeeldingsresource op basis van de methodenaam
         switch (methodName) {
             case "Living Labs":
                 return R.drawable.living_labs_image;
@@ -153,11 +159,12 @@ public class ResultFragment extends Fragment {
             case "Swipocratie":
                 return R.drawable.swipocratie_image;
             default:
-                return 0; // Default image or handle no image case
+                return 0; // Standaardafbeelding of afhandeling als er geen afbeelding is
         }
     }
 
     private int getBorderResource(String methodName) {
+        // Haal de juiste borderresource op basis van de methodenaam
         switch (methodName) {
             case "Living Labs":
                 return R.drawable.livinglabs_rounded_square;
@@ -184,11 +191,12 @@ public class ResultFragment extends Fragment {
             case "Swipocratie":
                 return R.drawable.swipocratie_rounded_square;
             default:
-                return R.drawable.border; // Default border or handle no border case
+                return R.drawable.border; // Standaard border of afhandeling als er geen border is
         }
     }
 
     private String formatMethodName(String methodName) {
+        // Formatteer de methodenaam zodat deze correct wordt weergegeven
         switch (methodName) {
             case "Klankbord Groep":
                 return "Klankbordgroep";
@@ -205,6 +213,7 @@ public class ResultFragment extends Fragment {
         }
     }
 
+    // Klasse om resultaten op te slaan
     private static class Result {
         private final String methodName;
         private final int score;

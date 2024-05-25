@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Deze xml-file bevat de layout en het ontwerp voor het Workform-fragment -->
+
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -6,11 +8,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".WorkformFragment">
 
+    <!-- ScrollView zorgt ervoor dat de inhoud scrollbaar is -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
 
+        <!-- LinearLayout plaatst de elementen verticaal onder elkaar -->
         <LinearLayout
             android:id="@+id/imagesContainer"
             android:layout_width="match_parent"
@@ -119,9 +123,9 @@
 
                 <ImageView
                     android:id="@+id/enqueteren_image"
-                    android:layout_width="145dp"
-                    android:layout_height="145dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_width="112dp"
+                    android:layout_height="133dp"
+                    android:layout_marginTop="16dp"
                     android:layout_marginEnd="4dp"
                     android:src="@drawable/enqueteren_image"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -156,8 +160,8 @@
 
                 <ImageView
                     android:id="@+id/burgerjury_image"
-                    android:layout_width="130dp"
-                    android:layout_height="130dp"
+                    android:layout_width="114dp"
+                    android:layout_height="132dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="4dp"
                     android:src="@drawable/burgerjury_image"
@@ -191,8 +195,8 @@
 
                 <ImageView
                     android:id="@+id/klankbord_image"
-                    android:layout_width="167dp"
-                    android:layout_height="167dp"
+                    android:layout_width="109dp"
+                    android:layout_height="137dp"
                     android:layout_marginTop="3dp"
                     android:layout_marginEnd="4dp"
                     android:src="@drawable/klankbord_image"
@@ -226,9 +230,9 @@
 
                 <ImageView
                     android:id="@+id/inspraak_image"
-                    android:layout_width="162dp"
-                    android:layout_height="167dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_width="109dp"
+                    android:layout_height="111dp"
+                    android:layout_marginTop="16dp"
                     android:src="@drawable/inspraak_image"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -261,8 +265,8 @@
 
                 <ImageView
                     android:id="@+id/straat_image"
-                    android:layout_width="175dp"
-                    android:layout_height="175dp"
+                    android:layout_width="109dp"
+                    android:layout_height="131dp"
                     android:layout_marginTop="4dp"
                     android:layout_marginEnd="4dp"
                     android:layout_marginBottom="4dp"
@@ -299,8 +303,8 @@
 
                 <ImageView
                     android:id="@+id/swipocratie_image"
-                    android:layout_width="130dp"
-                    android:layout_height="130dp"
+                    android:layout_width="111dp"
+                    android:layout_height="128dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="16dp"
                     android:src="@drawable/swipocratie_image"
@@ -322,10 +326,10 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
-                    android:layout_marginTop="32dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginEnd="8dp"
-                    android:text="@string/interactieve_internet_omgeving"
                     android:fontFamily="@font/philosopher_bold"
+                    android:text="@string/interactieve_internet_omgeving"
                     android:textColor="@color/black"
                     android:textSize="32dp"
                     app:layout_constraintEnd_toStartOf="@+id/interactieve_image"
@@ -395,21 +399,21 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
-                    android:layout_marginTop="32dp"
+                    android:layout_marginTop="28dp"
                     android:layout_marginEnd="8dp"
                     android:fontFamily="@font/philosopher_bold"
                     android:text="@string/keukentafel_gesprekken"
                     android:textColor="@color/black"
                     android:textSize="32dp"
                     app:layout_constraintEnd_toStartOf="@+id/keukentafel_image"
-                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintHorizontal_bias="0.262"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <ImageView
                     android:id="@+id/keukentafel_image"
-                    android:layout_width="160dp"
-                    android:layout_height="167dp"
+                    android:layout_width="124dp"
+                    android:layout_height="151dp"
                     android:layout_marginTop="4dp"
                     android:src="@drawable/keukentafel_image"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -442,7 +446,7 @@
 
                 <ImageView
                     android:id="@+id/photovoice_image"
-                    android:layout_width="130dp"
+                    android:layout_width="109dp"
                     android:layout_height="130dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="12dp"

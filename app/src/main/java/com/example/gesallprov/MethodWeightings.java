@@ -1,6 +1,8 @@
 package com.example.gesallprov;
 
 public class MethodWeightings {
+
+    // weging voor elke methode
     public static int[][] livingLabsWeights = {
             {2, 2, 2, 2, 2, 2, 2, 2, 2, 2}, // DOEL
             {2, 2, 2, 2, 2, 2, 2}, // DOELGROEP
@@ -240,7 +242,7 @@ public class MethodWeightings {
             {0, 2}, // FORMALITEIT
             {0, 2} // INPUT
     };
-
+    // maximale punten voor elke methode op basis van hun weging
     public static int maxPointsLivingLabs = 34;
     public static int maxPointsWorldCafe = 31;
 
@@ -263,23 +265,4 @@ public class MethodWeightings {
     public static int maxPointsPhotovoice = 32;
 
     public static int maxPointsSwipocratie = 34;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

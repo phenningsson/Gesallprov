@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- Denna xml fil innehåller applikationens olika färger -->
+<!-- Dit xml-bestand bevat de verschillende kleuren van de applicatie -->
 
 <resources>
     <color name="purple_200">#FFBB86FC</color>

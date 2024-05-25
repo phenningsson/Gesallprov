@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- res/layout/fragment_method_detail_dialog.xml -->
+<!-- Deze xml-file bevat de layout en het ontwerp voor het method_detail_dialog fragment -->
+
+<!-- LinearLayout wordt gebruikt om de elementen verticaal onder elkaar te plaatsen -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="16dp">
 
+    <!-- TextView voor de titel van de methode -->
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="match_parent"
@@ -14,6 +18,7 @@
         android:textStyle="bold"
         android:paddingBottom="8dp"/>
 
+    <!-- TextView voor de beschrijving van de methode -->
     <TextView
         android:id="@+id/tvDescription"
         android:layout_width="match_parent"
@@ -21,6 +26,7 @@
         android:textSize="16sp"
         android:paddingBottom="16dp"/>
 
+    <!-- Button om het dialoogvenster te sluiten -->
     <Button
         android:id="@+id/btnClose"
         android:layout_width="match_parent"
@@ -28,4 +34,3 @@
         android:text="@string/sluiten"/>
 
 </LinearLayout>
-

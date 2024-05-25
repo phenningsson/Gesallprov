@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- res/layout/fragment_result.xml -->
+<!-- Deze xml-file bevat de layout en het ontwerp voor het resultaat-fragment -->
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
 
+    <!-- LinearLayout plaatst de elementen verticaal onder elkaar -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <!-- Titel voor het resultaat -->
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="match_parent"
@@ -21,7 +25,7 @@
             android:textColor="@android:color/black"
             android:gravity="center"/>
 
-        <!-- Top Method -->
+        <!-- Layout voor de methode met de hoogste score -->
         <LinearLayout
             android:id="@+id/topMethodLayout"
             android:layout_width="match_parent"
@@ -31,6 +35,7 @@
             android:layout_marginBottom="16dp"
             android:background="@drawable/border">
 
+            <!-- Afbeelding van de topmethode -->
             <ImageView
                 android:id="@+id/ivTopMethodImage"
                 android:layout_width="130dp"
@@ -40,6 +45,7 @@
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"/>
 
+            <!-- Naam van de topmethode -->
             <TextView
                 android:id="@+id/tvTopMethodName"
                 android:layout_width="0dp"
@@ -51,7 +57,7 @@
                 android:textColor="@android:color/black"/>
         </LinearLayout>
 
-        <!-- Second Method -->
+        <!-- Layout voor de methode met de op één na hoogste score -->
         <LinearLayout
             android:id="@+id/secondMethodLayout"
             android:layout_width="match_parent"
@@ -61,6 +67,7 @@
             android:layout_marginBottom="16dp"
             android:background="@drawable/border">
 
+            <!-- Afbeelding van de tweede methode -->
             <ImageView
                 android:id="@+id/ivSecondMethodImage"
                 android:layout_width="130dp"
@@ -70,6 +77,7 @@
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"/>
 
+            <!-- Naam van de tweede methode -->
             <TextView
                 android:id="@+id/tvSecondMethodName"
                 android:layout_width="0dp"
@@ -81,7 +89,7 @@
                 android:textColor="@android:color/black"/>
         </LinearLayout>
 
-        <!-- Third Method -->
+        <!-- Layout voor de methode met de derde hoogste score -->
         <LinearLayout
             android:id="@+id/thirdMethodLayout"
             android:layout_width="match_parent"
@@ -91,6 +99,7 @@
             android:layout_marginBottom="16dp"
             android:background="@drawable/border">
 
+            <!-- Afbeelding van de derde methode -->
             <ImageView
                 android:id="@+id/ivThirdMethodImage"
                 android:layout_width="130dp"
@@ -100,6 +109,7 @@
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"/>
 
+            <!-- Naam van de derde methode -->
             <TextView
                 android:id="@+id/tvThirdMethodName"
                 android:layout_width="0dp"
@@ -111,7 +121,7 @@
                 android:textColor="@android:color/black"/>
         </LinearLayout>
 
-        <!-- Lower Scored Methods Title -->
+        <!-- Titel voor de lager scorende methoden -->
         <TextView
             android:id="@+id/tvLowerScoredMethodsTitle"
             android:layout_width="match_parent"
@@ -124,7 +134,7 @@
             android:gravity="center"
             android:textColor="@android:color/black"/>
 
-        <!-- Lower Scored Methods -->
+        <!-- Layout voor de lager scorende methoden -->
         <LinearLayout
             android:id="@+id/lowerScoredMethodsLayout"
             android:layout_width="match_parent"
@@ -134,6 +144,7 @@
             android:background="@drawable/border">
         </LinearLayout>
 
+        <!-- Knop om opnieuw te starten -->
         <Button
             android:id="@+id/btnRestart"
             android:layout_width="match_parent"
@@ -142,6 +153,7 @@
             android:layout_marginTop="16dp"
             android:fontFamily="sans-serif"/>
 
+        <!-- Knop om terug te keren naar het hoofdmenu -->
         <Button
             android:id="@+id/btnMainMenu"
             android:layout_width="match_parent"

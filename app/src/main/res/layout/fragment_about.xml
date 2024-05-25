@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<!-- Denna xml fil innehåller layouten och designen för
- home-fragmentet som är appens startsida -->
+<!-- Deze xml-file bevat de layout en het ontwerp voor het
+ home-fragment, dat de startpagina van de app is -->
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -10,11 +10,12 @@
     android:layout_height="match_parent"
     tools:context=".HomeFragment">
 
+    <!-- Gebruik van ConstraintLayout voor flexibele positionering van elementen -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"  >
+        android:layout_height="match_parent">
 
-
+        <!-- TextView voor de tekst "Over deze app" -->
         <TextView
             android:id="@+id/tvAboutPage"
             android:layout_width="wrap_content"
@@ -36,6 +37,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.25" />
 
+        <!-- ImageView voor de afbeelding "about_image" -->
         <ImageView
             android:id="@+id/aboutImageView"
             android:layout_width="wrap_content"
@@ -48,9 +50,6 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.984" />
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 </FrameLayout>

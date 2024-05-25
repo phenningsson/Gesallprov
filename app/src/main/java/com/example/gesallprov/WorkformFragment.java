@@ -10,14 +10,16 @@ import android.view.ViewGroup;
 public class WorkformFragment extends Fragment {
 
     public WorkformFragment() {
-        // Required empty public constructor
+        // Vereiste lege constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // Inflate de layout voor dit fragment
         View view = inflater.inflate(R.layout.fragment_workform, container, false);
 
+        // Stel de details in voor elke participatiewerkvorm
         setupMethodDetails(view, R.id.living_labs_constraint, R.string.living_labs, R.string.living_labs_description);
         setupMethodDetails(view, R.id.second_living_labs_constraint, R.string.wordcaf, R.string.wordcaf_description);
         setupMethodDetails(view, R.id.enqueteren_constraint, R.string.enqu_teren, R.string.enqu_teren_description);
@@ -34,12 +36,17 @@ public class WorkformFragment extends Fragment {
         return view;
     }
 
+    // Deze methode stelt de details in voor elke participatiewerkvorm
     private void setupMethodDetails(View view, int constraintId, int titleId, int descriptionId) {
+        // Zoek de view die overeenkomt met de opgegeven constraintId
         View methodView = view.findViewById(constraintId);
+        // Stel een kliklistener in op deze view
         methodView.setOnClickListener(v -> {
+            // Haal de FragmentManager op
             FragmentManager fragmentManager = getParentFragmentManager();
+            // Maak een nieuwe instantie van MethodDetailDialog met de opgegeven titel en beschrijving
             MethodDetailDialog.newInstance(getString(titleId), getString(descriptionId))
-                    .show(fragmentManager, "method_detail");
+                    .show(fragmentManager, "method_detail"); // Toon de dialog
         });
     }
 }

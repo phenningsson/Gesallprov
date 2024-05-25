@@ -12,11 +12,13 @@ import android.widget.Toast;
 
 public class QuizFragment extends Fragment implements View.OnClickListener {
 
+    // Declaraties van TextViews en Buttons
     private TextView tvTotalQ;
     private TextView tvQuestion;
     private Button answerABtn, answerBBtn, answerCBtn, answerDBtn, answerEBtn, answerFBtn,
             answerGBtn, answerHBtn, answerIBtn, answerJBtn, submitBtn;
 
+    // Variabelen voor de totale vragen, huidige vraagindex, geselecteerde antwoord en methodescores
     private int totalQuestions = AnswerQuestion.question.length;
     private int currentQuestionsIndex = 0;
     private String selectedAnswer = "";
@@ -27,8 +29,10 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // Inflate het layout voor dit fragment
         view = inflater.inflate(R.layout.fragment_quiz, container, false);
 
+        // Initialiseer TextViews en Buttons
         tvTotalQ = view.findViewById(R.id.tvTotalQ);
         tvQuestion = view.findViewById(R.id.tvQuestion);
         answerABtn = view.findViewById(R.id.answerABtn);
@@ -43,6 +47,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         answerJBtn = view.findViewById(R.id.answerJBtn);
         submitBtn = view.findViewById(R.id.submitBtn);
 
+        // Zet OnClickListeners voor de buttons
         answerABtn.setOnClickListener(this);
         answerBBtn.setOnClickListener(this);
         answerCBtn.setOnClickListener(this);
@@ -55,7 +60,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         answerJBtn.setOnClickListener(this);
         submitBtn.setOnClickListener(this);
 
-        // Initialize the current question number display
+        // Initialiseer de weergave van het huidige vraagnummer
         tvTotalQ.setText("Vraag 1 van " + totalQuestions);
 
         newQuestion();
@@ -65,12 +70,16 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        // Reset de achtergrond van de buttons
         resetButtonBackgrounds();
 
+        // Haal de geklikte button op
         Button clickedBtn = (Button) v;
         if (clickedBtn.getId() == R.id.submitBtn) {
+            // Als de submit button wordt geklikt, haal het geselecteerde antwoord op
             int selectedAnswerIndex = getSelectedAnswerIndex();
             if (selectedAnswerIndex != -1) {
+                // Werk de methodescores bij op basis van het geselecteerde antwoord
                 methodScores[0] += MethodWeightings.livingLabsWeights[currentQuestionsIndex][selectedAnswerIndex];
                 methodScores[1] += MethodWeightings.worldCafeWeights[currentQuestionsIndex][selectedAnswerIndex];
                 methodScores[2] += MethodWeightings.enqueterenWeights[currentQuestionsIndex][selectedAnswerIndex];
@@ -86,9 +95,11 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
                 currentQuestionsIndex++;
                 newQuestion();
             } else {
+                // Toon een toast bericht als er geen antwoord is geselecteerd
                 Toast.makeText(getActivity(), "Voer antwoord in", Toast.LENGTH_SHORT).show();
             }
         } else {
+            // Als een antwoord button wordt geklikt, stel het geselecteerde antwoord in
             selectedAnswer = clickedBtn.getText().toString();
             clickedBtn.setBackgroundColor(Color.rgb(0, 0, 0));
             clickedBtn.setTextColor(Color.rgb(255, 255, 255));
@@ -96,6 +107,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     }
 
     private void resetButtonBackgrounds() {
+        // Reset de achtergrond en tekstkleur van alle antwoord buttons
         answerABtn.setBackgroundColor(Color.WHITE);
         answerBBtn.setBackgroundColor(Color.WHITE);
         answerCBtn.setBackgroundColor(Color.WHITE);
@@ -120,6 +132,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     }
 
     private int getSelectedAnswerIndex() {
+        // Haal de index op van het geselecteerde antwoord
         if (selectedAnswer.equals(answerABtn.getText().toString())) {
             return 0;
         } else if (selectedAnswer.equals(answerBBtn.getText().toString())) {
@@ -146,14 +159,16 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     }
 
     private void newQuestion() {
+        // Controleer of alle vragen zijn beantwoord, zo ja, beëindig de quiz
         if (currentQuestionsIndex == totalQuestions) {
             finishQuiz();
             return;
         }
 
-        // Update the current question number display
+        // Update de weergave van het huidige vraagnummer
         tvTotalQ.setText("Vraag " + (currentQuestionsIndex + 1) + " van " + totalQuestions);
 
+        // Stel de nieuwe vraag en antwoordmogelijkheden in
         tvQuestion.setText(AnswerQuestion.question[currentQuestionsIndex]);
         String[] choices = AnswerQuestion.choices[currentQuestionsIndex];
 
@@ -167,10 +182,12 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
                 buttons[i].setVisibility(View.GONE);
             }
         }
-        selectedAnswer = ""; // Reset selected answer for new question
+        // Reset het geselecteerde antwoord voor de nieuwe vraag
+        selectedAnswer = "";
     }
 
     private void finishQuiz() {
+        // Stel een bericht samen met de resultaten van de quiz
         StringBuilder resultMessage = new StringBuilder();
         resultMessage.append("Living Labs: ")
                 .append((methodScores[0] * 100) / MethodWeightings.maxPointsLivingLabs)
@@ -198,7 +215,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
                 .append((methodScores[11] * 100) / MethodWeightings.maxPointsSwipocratie)
                 .append("%");
 
-        // Show results in the new ResultFragment
+        // Toon de resultaten in het nieuwe ResultFragment
         ResultFragment resultFragment = ResultFragment.newInstance(resultMessage.toString());
         getActivity().getSupportFragmentManager().beginTransaction()
                 .replace(R.id.frameLayout, resultFragment)
