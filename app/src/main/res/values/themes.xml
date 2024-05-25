@@ -2,7 +2,7 @@
     <!-- Deze xml-bestand bevat het standaardthema van de applicatie -->
 
     <!-- Standaard thema voor de applicatie, afgeleid van het MaterialComponents thema -->
-    <style name="Theme.Gesallprov" parent="Theme.MaterialComponents.Light.DarkActionBar">
+    <style name="Theme.Gesallprov" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primaire merk kleur -->
         <item name="colorPrimary">@color/black</item>
         <item name="colorPrimaryVariant">#1A0187</item>
