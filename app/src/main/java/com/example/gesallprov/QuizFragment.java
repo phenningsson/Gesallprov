@@ -16,13 +16,14 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     private TextView tvTotalQ;
     private TextView tvQuestion;
     private Button answerABtn, answerBBtn, answerCBtn, answerDBtn, answerEBtn, answerFBtn,
-            answerGBtn, answerHBtn, answerIBtn, answerJBtn, submitBtn;
+            answerGBtn, answerHBtn, answerIBtn, answerJBtn, submitBtn, backBtn;
 
     // Variabelen voor de totale vragen, huidige vraagindex, geselecteerde antwoord en methodescores
     private int totalQuestions = AnswerQuestion.question.length;
     private int currentQuestionsIndex = 0;
     private String selectedAnswer = "";
     private int[] methodScores = new int[12]; // Update for the number of methods (12 for now)
+    private String[] selectedAnswers = new String[totalQuestions]; // To store selected answers
 
     View view;
 
@@ -46,6 +47,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         answerIBtn = view.findViewById(R.id.answerIBtn);
         answerJBtn = view.findViewById(R.id.answerJBtn);
         submitBtn = view.findViewById(R.id.submitBtn);
+        backBtn = view.findViewById(R.id.backBtn);
 
         // Zet OnClickListeners voor de buttons
         answerABtn.setOnClickListener(this);
@@ -59,6 +61,7 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         answerIBtn.setOnClickListener(this);
         answerJBtn.setOnClickListener(this);
         submitBtn.setOnClickListener(this);
+        backBtn.setOnClickListener(this);
 
         // Initialiseer de weergave van het huidige vraagnummer
         tvTotalQ.setText("Vraag 1 van " + totalQuestions);
@@ -73,12 +76,12 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
         // Reset de achtergrond van de buttons
         resetButtonBackgrounds();
 
-        // Haal de geklikte button op
         Button clickedBtn = (Button) v;
         if (clickedBtn.getId() == R.id.submitBtn) {
-            // Als de submit button wordt geklikt, haal het geselecteerde antwoord op
             int selectedAnswerIndex = getSelectedAnswerIndex();
             if (selectedAnswerIndex != -1) {
+                selectedAnswers[currentQuestionsIndex] = selectedAnswer; // Store selected answer
+
                 // Werk de methodescores bij op basis van het geselecteerde antwoord
                 methodScores[0] += MethodWeightings.livingLabsWeights[currentQuestionsIndex][selectedAnswerIndex];
                 methodScores[1] += MethodWeightings.worldCafeWeights[currentQuestionsIndex][selectedAnswerIndex];
@@ -92,14 +95,21 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
                 methodScores[9] += MethodWeightings.keukentafelgesprekkenWeights[currentQuestionsIndex][selectedAnswerIndex];
                 methodScores[10] += MethodWeightings.photovoiceWeights[currentQuestionsIndex][selectedAnswerIndex];
                 methodScores[11] += MethodWeightings.swipocratieWeights[currentQuestionsIndex][selectedAnswerIndex];
+
                 currentQuestionsIndex++;
                 newQuestion();
             } else {
-                // Toon een toast bericht als er geen antwoord is geselecteerd
                 Toast.makeText(getActivity(), "Voer antwoord in", Toast.LENGTH_SHORT).show();
             }
+        } else if (clickedBtn.getId() == R.id.backBtn) {
+            if (currentQuestionsIndex > 0) {
+                currentQuestionsIndex--;
+                loadPreviousAnswer();
+                newQuestion();
+            } else {
+                Toast.makeText(getActivity(), "Dit is de eerste vraag", Toast.LENGTH_SHORT).show();
+            }
         } else {
-            // Als een antwoord button wordt geklikt, stel het geselecteerde antwoord in
             selectedAnswer = clickedBtn.getText().toString();
             clickedBtn.setBackgroundColor(Color.rgb(0, 0, 0));
             clickedBtn.setTextColor(Color.rgb(255, 255, 255));
@@ -107,7 +117,6 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     }
 
     private void resetButtonBackgrounds() {
-        // Reset de achtergrond en tekstkleur van alle antwoord buttons
         answerABtn.setBackgroundColor(Color.WHITE);
         answerBBtn.setBackgroundColor(Color.WHITE);
         answerCBtn.setBackgroundColor(Color.WHITE);
@@ -132,7 +141,6 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     }
 
     private int getSelectedAnswerIndex() {
-        // Haal de index op van het geselecteerde antwoord
         if (selectedAnswer.equals(answerABtn.getText().toString())) {
             return 0;
         } else if (selectedAnswer.equals(answerBBtn.getText().toString())) {
@@ -159,16 +167,13 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
     }
 
     private void newQuestion() {
-        // Controleer of alle vragen zijn beantwoord, zo ja, beëindig de quiz
         if (currentQuestionsIndex == totalQuestions) {
             finishQuiz();
             return;
         }
 
-        // Update de weergave van het huidige vraagnummer
         tvTotalQ.setText("Vraag " + (currentQuestionsIndex + 1) + " van " + totalQuestions);
 
-        // Stel de nieuwe vraag en antwoordmogelijkheden in
         tvQuestion.setText(AnswerQuestion.question[currentQuestionsIndex]);
         String[] choices = AnswerQuestion.choices[currentQuestionsIndex];
 
@@ -182,8 +187,23 @@ public class QuizFragment extends Fragment implements View.OnClickListener {
                 buttons[i].setVisibility(View.GONE);
             }
         }
-        // Reset het geselecteerde antwoord voor de nieuwe vraag
-        selectedAnswer = "";
+
+        selectedAnswer = ""; // Reset selected answer for new question
+    }
+
+    private void loadPreviousAnswer() {
+        if (selectedAnswers[currentQuestionsIndex] != null) {
+            selectedAnswer = selectedAnswers[currentQuestionsIndex];
+            Button[] buttons = {answerABtn, answerBBtn, answerCBtn, answerDBtn, answerEBtn, answerFBtn, answerGBtn, answerHBtn, answerIBtn, answerJBtn};
+
+            for (Button button : buttons) {
+                if (button.getText().toString().equals(selectedAnswer)) {
+                    button.setBackgroundColor(Color.rgb(0, 0, 0));
+                    button.setTextColor(Color.rgb(255, 255, 255));
+                    break;
+                }
+            }
+        }
     }
 
     private void finishQuiz() {

@@ -153,14 +153,28 @@
                     android:textColor="@color/black"
                     android:fontFamily="sans-serif"/>
 
-                <!-- Knop om het antwoord in te sturen -->
-                <Button
-                    android:id="@+id/submitBtn"
-                    android:layout_width="wrap_content"
+                <!-- Knoppen om het antwoord in te sturen en terug te gaan -->
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/submit"
-                    android:layout_gravity="center_horizontal"
-                    android:fontFamily="sans-serif"/>
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal">
+
+                    <Button
+                        android:id="@+id/backBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/back"
+                        android:layout_marginEnd="16dp"/>
+
+                    <Button
+                        android:id="@+id/submitBtn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:text="@string/submit"/>
+                </LinearLayout>
 
             </LinearLayout>
         </ScrollView>
